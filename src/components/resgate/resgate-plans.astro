@@ -1,0 +1,180 @@
+---
+import Button from "@/components/ui/button.astro";
+---
+
+<section class="py-24 bg-surface relative">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-4">
+                Escolha seu plano
+            </h2>
+            <p class="text-gray-400">
+                Opções claras baseadas na gravidade do problema.
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-center">
+            <!-- Plano Lite -->
+            <div
+                class="bg-black/50 border border-white/5 rounded-2xl p-8 hover:border-white/10 transition-colors h-full flex flex-col"
+            >
+                <div class="mb-6">
+                    <h3 class="text-xl font-bold text-white">Resgate Lite</h3>
+                    <p class="text-sm text-gray-500 font-mono mt-1">
+                        "Apenas consertar"
+                    </p>
+                </div>
+                <div class="text-3xl font-bold text-white mb-6">
+                    R$ 400 <span class="text-sm font-normal text-gray-500"
+                        >/ único</span
+                    >
+                </div>
+                <ul class="space-y-4 mb-8 flex-1">
+                    <li class="flex items-start gap-3 text-sm text-gray-400">
+                        <span class="text-white">✓</span> Diagnóstico básico
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-gray-400">
+                        <span class="text-white">✓</span> Correção de bugs visuais
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-gray-400">
+                        <span class="text-white">✓</span> Configuração básica de Cache
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-gray-400">
+                        <span class="text-white">✓</span> Otimização de imagens
+                    </li>
+                </ul>
+                <div
+                    class="p-4 bg-white/5 rounded-lg border border-white/5 mb-8"
+                >
+                    <p class="text-xs text-gray-500">
+                        Ideal para sites pequenos que precisam apenas de ajustes
+                        pontuais.
+                    </p>
+                </div>
+                <Button
+                    href="https://wa.me/5500000000000?text=Quero%20Resgate%20Lite"
+                    target="_blank"
+                    variant="secondary"
+                    class="w-full text-sm"
+                >
+                    Quero o Lite
+                </Button>
+            </div>
+
+            <!-- Plano Standard -->
+            <div
+                class="bg-black border border-red-500/50 rounded-2xl p-8 relative shadow-[0_0_50px_-12px_rgba(239,68,68,0.2)] transform lg:-translate-y-4 h-full flex flex-col"
+            >
+                <div
+                    class="absolute top-0 center transform -translate-y-1/2 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider"
+                >
+                    Recomendado
+                </div>
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <h3 class="text-xl font-bold text-white">
+                            Resgate Standard
+                        </h3>
+                        <p class="text-sm text-gray-500 font-mono mt-1">
+                            "Destravar potencial"
+                        </p>
+                    </div>
+                    <div
+                        class="bg-red-500/10 border border-red-500/20 text-xs px-2 py-1 rounded text-red-400"
+                    >
+                        A partir R$ 900
+                    </div>
+                </div>
+                <div class="text-3xl font-bold text-white mb-6">
+                    Sob Consulta
+                </div>
+                <ul class="space-y-4 mb-8 flex-1">
+                    <li class="flex items-start gap-3 text-sm text-gray-300">
+                        <span class="text-red-500">✓</span> Diagnóstico Completo (Core
+                        Web Vitals)
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-gray-300">
+                        <span class="text-red-500">✓</span> Otimização Avançada (Cloudflare
+                        + Cache)
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-gray-300">
+                        <span class="text-red-500">✓</span> Revisão de SEO Técnico
+                        (Tags, Sitemap)
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-gray-300">
+                        <span class="text-red-500">✓</span> Integração correta com
+                        WhatsApp
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-gray-300">
+                        <span class="text-red-500">✓</span> Rebuild parcial se necessário
+                    </li>
+                </ul>
+                <div
+                    class="p-4 bg-red-500/10 rounded-lg border border-red-500/20 mb-8"
+                >
+                    <p class="text-xs text-red-200">
+                        Para quem depende do site para vender e não pode perder
+                        leads por lentidão.
+                    </p>
+                </div>
+                <Button
+                    href="https://wa.me/5500000000000?text=Quero%20Resgate%20Standard"
+                    target="_blank"
+                    variant="primary"
+                    class="w-full bg-red-600! text-white! hover:bg-red-500!"
+                >
+                    Avaliar meu Site
+                </Button>
+            </div>
+
+            <!-- Plano Rebuild -->
+            <div
+                class="bg-black/50 border border-white/5 rounded-2xl p-8 hover:border-white/10 transition-colors h-full flex flex-col"
+            >
+                <div class="mb-6">
+                    <h3 class="text-xl font-bold text-white">Rebuild Total</h3>
+                    <p class="text-sm text-gray-500 font-mono mt-1">
+                        "Começar do jeito certo"
+                    </p>
+                </div>
+                <div class="text-3xl font-bold text-white mb-6">
+                    R$ 1.500 <span class="text-sm font-normal text-gray-500"
+                        >/ base</span
+                    >
+                </div>
+                <ul class="space-y-4 mb-8 flex-1">
+                    <li class="flex items-start gap-3 text-sm text-gray-400">
+                        <span class="text-white">✓</span> Migração para tecnologia
+                        moderna (Astro/Next)
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-gray-400">
+                        <span class="text-white">✓</span> Design focado em conversão
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-gray-400">
+                        <span class="text-white">✓</span> Hospedagem de alta performance
+                        inclusa
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-gray-400">
+                        <span class="text-white">✓</span> Todo o pacote Standard incluso
+                    </li>
+                </ul>
+                <div
+                    class="p-4 bg-white/5 rounded-lg border border-white/5 mb-8"
+                >
+                    <p class="text-xs text-gray-500">
+                        Quando o site atual é inviável de consertar e é melhor
+                        refazer.
+                    </p>
+                </div>
+                <Button
+                    href="https://wa.me/5500000000000?text=Quero%20Rebuild"
+                    target="_blank"
+                    variant="secondary"
+                    class="w-full text-sm"
+                >
+                    Falar sobre Rebuild
+                </Button>
+            </div>
+        </div>
+    </div>
+</section>

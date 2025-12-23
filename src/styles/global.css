@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #F7FF00;
+    --color-success: #00ff00;
+    --color-error: #ff0000;
+    --color-background: #000000;
+    --color-surface: #111111;
+    --color-surface-hover: #222222;
+
+    --font-display: 'Manrope', sans-serif;
+    --font-body: 'Manrope', sans-serif;
+
+    --animate-fade-in: fade-in 0.5s ease-in-out;
+    --animate-slide-up: slide-up 0.5s ease-out;
+}
+
+@utility glass {
+    @apply backdrop-blur-xl bg-white/5 border border-white/10;
+}
+
+@utility glass-strong {
+    @apply backdrop-blur-2xl bg-white/10 border border-white/20;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+html,
+body {
+    @apply bg-background text-white font-body antialiased;
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply font-display font-bold;
+}

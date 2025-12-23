@@ -1,0 +1,79 @@
+---
+
+---
+
+<section id="como-funciona" class="py-24 bg-surface text-center">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl lg:text-4xl font-bold mb-16">
+            Processo simples, sem complexidade
+        </h2>
+        <div
+            class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto relative z-10"
+        >
+            {
+                [
+                    {
+                        step: "1",
+                        title: "Diagnóstico",
+                        desc: "WhatsApp ou call curta",
+                    },
+                    {
+                        step: "2",
+                        title: "Definição",
+                        desc: "Escopo e prazo fixos",
+                    },
+                    {
+                        step: "3",
+                        title: "Execução",
+                        desc: "Checklist técnico rigoroso",
+                    },
+                    {
+                        step: "4",
+                        title: "Entrega",
+                        desc: "Orientação e acesso",
+                    },
+                ].map((item) => (
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-2xl bg-black border border-white/10 flex items-center justify-center text-xl font-bold text-white mb-4 shadow-lg">
+                            {item.step}
+                        </div>
+                        <h3 class="font-bold text-white mb-1">{item.title}</h3>
+                        <p class="text-xs text-gray-400">{item.desc}</p>
+                    </div>
+                ))
+            }
+        </div>
+        <p class="mt-12 text-sm text-gray-500">
+            Sem improviso: cada serviço tem um formato de entrega e limites
+            claros.
+        </p>
+    </div>
+</section>
+
+<section id="sobre" class="py-20 bg-black border-t border-white/5">
+    <div class="container mx-auto px-4 text-center max-w-3xl">
+        <h2 class="text-2xl font-bold mb-6">
+            Uma operação enxuta, focada em entrega
+        </h2>
+        <p class="text-gray-400 leading-relaxed mb-8">
+            A Ravi Media nasce como uma prestação de serviço focada, com
+            processo repetível e intenção clara de gerar eficiência e execução
+            técnica superior. Não somos uma agência "full-service" que tenta
+            fazer tudo. Somos especialistas em infraestrutura digital para
+            conversão.
+        </p>
+        <div
+            class="flex justify-center gap-4 text-xs font-mono text-primary/80"
+        >
+            <span class="bg-surface px-3 py-1 rounded border border-white/5"
+                >Entrega Rápida</span
+            >
+            <span class="bg-surface px-3 py-1 rounded border border-white/5"
+                >Escopo Claro</span
+            >
+            <span class="bg-surface px-3 py-1 rounded border border-white/5"
+                >Base Técnica</span
+            >
+        </div>
+    </div>
+</section>

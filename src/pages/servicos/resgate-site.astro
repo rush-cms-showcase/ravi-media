@@ -1,0 +1,23 @@
+---
+import Layout from "@/layouts/layout.astro";
+import Navbar from "@/components/common/navbar.astro";
+import FormFooter from "@/components/common/form-footer.astro";
+
+import ResgateHero from "@/components/resgate/resgate-hero.astro";
+import ResgateProcess from "@/components/resgate/resgate-process.astro";
+import ResgatePlans from "@/components/resgate/resgate-plans.astro";
+import ResgateAudience from "@/components/resgate/resgate-audience.astro";
+import ResgateFaq from "@/components/resgate/resgate-faq.astro";
+---
+
+<Layout>
+    <Navbar />
+    <main>
+        <ResgateHero />
+        <ResgateProcess />
+        <ResgatePlans />
+        <ResgateAudience />
+        <ResgateFaq />
+    </main>
+    <FormFooter />
+</Layout>

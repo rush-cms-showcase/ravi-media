@@ -1,0 +1,26 @@
+---
+import Layout from "@/layouts/layout.astro";
+import Navbar from "@/components/common/navbar.astro";
+import FormFooter from "@/components/common/form-footer.astro";
+
+import PortalHero from "@/components/portal/portal-hero.astro";
+import ServiceCards from "@/components/portal/service-cards.astro";
+import PortalWhy from "@/components/portal/portal-why.astro";
+import PortalContent from "@/components/portal/portal-content.astro";
+import PortalFaq from "@/components/portal/portal-faq.astro";
+---
+
+<Layout>
+    <Navbar />
+    <main>
+        <PortalHero />
+        <ServiceCards />
+        <PortalWhy />
+        <PortalContent />
+        <!-- Includes Process & About -->
+        <PortalFaq />
+    </main>
+    <div id="contato">
+        <FormFooter />
+    </div>
+</Layout>

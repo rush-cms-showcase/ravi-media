@@ -1,0 +1,88 @@
+---
+import Button from "@/components/ui/button.astro";
+---
+
+<section class="py-20 bg-black border-t border-white/5">
+    <div class="container mx-auto px-4 max-w-4xl">
+        <div class="grid md:grid-cols-2 gap-12 mb-20">
+            <!-- Requirements -->
+            <div>
+                <h3 class="text-xl font-bold text-white mb-6">
+                    O que preciso de você
+                </h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3 text-gray-400">
+                        <span class="text-blue-500 mt-1">1.</span>
+                        <span
+                            >Acesso ao Perfil da Empresa (ou criamos do zero)</span
+                        >
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-400">
+                        <span class="text-blue-500 mt-1">2.</span>
+                        <span
+                            >Fotos do local/serviço (ajudo a escolher as
+                            melhores)</span
+                        >
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-400">
+                        <span class="text-blue-500 mt-1">3.</span>
+                        <span>Lista de serviços e áreas de atendimento</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Deliverables -->
+            <div>
+                <h3 class="text-xl font-bold text-white mb-6">
+                    O que eu entrego
+                </h3>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-start gap-3 text-gray-400">
+                        <span class="text-green-500 mt-1">✓</span>
+                        <span
+                            >Perfil 100% preenchido e otimizado para busca</span
+                        >
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-400">
+                        <span class="text-green-500 mt-1">✓</span>
+                        <span>Estratégia de Palavras-chave Locais</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-400">
+                        <span class="text-green-500 mt-1">✓</span>
+                        <span>Link direto para facilitar avaliações</span>
+                    </li>
+                </ul>
+                <p
+                    class="text-sm text-gray-500 italic border-l-2 border-white/10 pl-4"
+                >
+                    *Não inclui gestão mensal de posts (check-ins e melhorias),
+                    porque o modelo prevê evolução contínua.
+                </p>
+                <span
+                    class="inline-block mt-4 text-xs font-mono text-blue-500 border border-blue-500/20 bg-blue-500/10 px-2 py-1 rounded"
+                >
+                    Evolução Recorrente
+                </span>
+            </div>
+        </div>
+        <!-- CTA Final -->
+        <div
+            class="text-center p-12 bg-linear-to-b from-surface to-black border border-white/10 rounded-3xl"
+        >
+            <h2 class="text-3xl font-bold text-white mb-4">
+                Quer destravar mais visibilidade local?
+            </h2>
+            <p class="text-gray-400 mb-8">
+                Chame no WhatsApp e peça o diagnóstico rápido.
+            </p>
+            <Button
+                href="https://wa.me/5500000000000?text=Quero%20diagn%C3%B3stico%20Google%20Turbo"
+                target="_blank"
+                variant="primary"
+                class="bg-blue-500! text-white! hover:bg-blue-400! border-none px-8 py-4 text-lg"
+            >
+                Falar no WhatsApp
+            </Button>
+        </div>
+    </div>
+</section>

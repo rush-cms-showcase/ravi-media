@@ -1,0 +1,125 @@
+---
+import Button from "@/components/ui/button.astro";
+---
+
+<section
+    class="relative
+min-h-[600px] flex items-center pt-32 pb-20 overflow-hidden"
+>
+    <!-- Background
+Glow -->
+    <div
+        class="absolute top-0 center w-full h-[600px] bg-primary/10
+blur-[150px] pointer-events-none opacity-40"
+    >
+    </div>
+    <div class="container
+mx-auto px-4 relative z-10 text-center">
+        <div class="max-w-4xl mx-auto
+space-y-8">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full
+bg-white/5 border border-white/10 text-xs font-mono text-primary/80 mb-4"
+            >
+                <span class="relative flex h-2 w-2">
+                    <span
+                        class="animate-ping absolute
+inline-flex h-full w-full rounded-full bg-primary opacity-75"
+                    ></span>
+                    <span
+                        class="relative inline-flex rounded-full h-2 w-2 bg-primary"
+                    ></span>
+                </span>
+                Infraestrutura Digital
+            </div>
+            <h1
+                class="text-4xl lg:text-7xl font-display
+font-bold leading-tight tracking-tight"
+            >
+                Infraestrutura digital para gerar mais
+                <span class="bg-primary/10 px-2 rounded-lg text-primary"
+                    >contatos</span
+                > — sem enrolação.
+            </h1>
+            <p
+                class="text-xl lg:text-2xl text-gray-400 max-w-2xl mx-auto
+leading-relaxed"
+            >
+                Sites, presença local no Google e performance técnica para
+                negócios de serviços que precisam de previsibilidade.
+            </p>
+            <div
+                class="flex
+flex-col sm:flex-row items-center justify-center gap-4 pt-4"
+            >
+                <Button
+                    href="#diagnostico"
+                    variant="primary"
+                    class="w-full sm:w-auto text-lg px-8 py-4"
+                >
+                    Pedir diagnóstico rápido
+                </Button>
+                <Button
+                    href="#servicos"
+                    variant="secondary"
+                    class="w-full sm:w-auto text-lg px-8 py-4"
+                >
+                    Ver serviços
+                </Button>
+            </div>
+            <div
+                class="flex items-center justify-center gap-4 text-xs
+lg:text-sm text-gray-500 pt-8 border-t border-white/5 mt-8 max-w-lg mx-auto"
+            >
+                <div class="flex items-center gap-2">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="text-primary"
+                        ><polyline points="20 6 9 17 4 12"></polyline></svg
+                    >
+                    Processo claro
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="text-primary"
+                        ><polyline points="20 6 9 17 4
+12"></polyline></svg
+                    > Escopo fechado
+                </div>
+                <div class="flex items-center
+gap-2">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="text-primary"
+                        ><polyline points="20 6 9 17 4 12"></polyline></svg
+                    > Performance real
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

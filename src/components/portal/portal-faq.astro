@@ -1,0 +1,43 @@
+---
+
+---
+
+<section id="faq" class="py-20 bg-surface">
+    <div class="container mx-auto px-4 max-w-3xl">
+        <h2 class="text-2xl font-bold mb-8 text-center">Dúvidas Frequentes</h2>
+        <div class="space-y-4">
+            {
+                [
+                    {
+                        q: "Qual serviço é melhor para mim?",
+                        a: "Se você precisa de leads urgentes, vá de Landing Page. Se quer ser encontrado no mapa da cidade, Google Meu Negócio. Se já tem site mas ele é ruim, Resgate.",
+                    },
+                    {
+                        q: "Vocês fazem tráfego pago?",
+                        a: "Focamos na infraestrutura (a página e o perfil). Podemos indicar parceiros, mas nosso core é garantir que, quando o cliente chegar, ele converta.",
+                    },
+                    {
+                        q: "Como funciona o diagnóstico?",
+                        a: "É uma conversa rápida no WhatsApp para entender seu momento atual e indicar a solução de melhor custo-benefício.",
+                    },
+                    {
+                        q: "O que está incluso e o que não está?",
+                        a: "Cada serviço tem seu escopo fechado descrito na proposta. Não fazemos gestão de redes sociais ou design gráfico avulso.",
+                    },
+                ].map((item) => (
+                    <details class="group bg-black border border-white/5 rounded-lg overflow-hidden cursor-pointer">
+                        <summary class="flex items-center justify-between p-4 font-medium text-gray-300 group-open:text-white group-open:bg-white/5 transition-colors list-none">
+                            {item.q}
+                            <span class="text-gray-500 group-open:rotate-180 transition-transform">
+                                ▼
+                            </span>
+                        </summary>
+                        <div class="p-4 text-sm text-gray-400 border-t border-white/5 bg-black/50">
+                            {item.a}
+                        </div>
+                    </details>
+                ))
+            }
+        </div>
+    </div>
+</section>

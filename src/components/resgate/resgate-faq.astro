@@ -1,0 +1,39 @@
+---
+
+---
+
+<section id="faq" class="py-20 bg-surface border-t border-white/5">
+    <div class="container mx-auto px-4 max-w-3xl">
+        <h2 class="text-2xl font-bold mb-8 text-center">Dúvidas Frequentes</h2>
+        <div class="space-y-4">
+            {
+                [
+                    {
+                        q: "Dá para salvar qualquer site?",
+                        a: "Nem sempre. Por isso começamos com o diagnóstico. Às vezes, o código antigo está tão comprometido que o Rebuild (reconstrução limpa) é mais barato e eficiente do que tentar consertar.",
+                    },
+                    {
+                        q: "Vocês garantem nota 100 no PageSpeed?",
+                        a: "Não prometemos notas mágicas, prometemos performance real mensurável. A nota depende de muitos fatores (servidor, scripts de terceiros), mas garantimos a melhor otimização possível para sua estrutura.",
+                    },
+                    {
+                        q: "Depois do resgate, vocês acompanham?",
+                        a: "Sim. Podemos evoluir para um contrato de suporte e melhoria contínua após a entrega do resgate, garantindo que o site não volte a ficar lento.",
+                    },
+                ].map((item) => (
+                    <details class="group bg-black border border-white/5 rounded-lg overflow-hidden cursor-pointer">
+                        <summary class="flex items-center justify-between p-4 font-medium text-gray-300 group-open:text-white group-open:bg-white/5 transition-colors list-none">
+                            {item.q}
+                            <span class="text-gray-500 group-open:rotate-180 transition-transform">
+                                ▼
+                            </span>
+                        </summary>
+                        <div class="p-4 text-sm text-gray-400 border-t border-white/5 bg-black/50">
+                            {item.a}
+                        </div>
+                    </details>
+                ))
+            }
+        </div>
+    </div>
+</section>

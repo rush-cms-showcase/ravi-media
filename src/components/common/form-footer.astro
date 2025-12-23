@@ -1,0 +1,194 @@
+---
+import Button from "@/components/ui/button.astro";
+---
+
+<section id="diagnostico" class="py-24 bg-surface text-center">
+    <div class="container mx-auto px-4 max-w-2xl">
+        <div class="mb-12">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-4">
+                Vamos colocar isso no ar?
+            </h2>
+            <p class="text-gray-400">Preencha para receber o diagnóstico.</p>
+        </div>
+
+        <form
+            class="space-y-4 text-left p-8 rounded-2xl border border-white/5 bg-black/50 backdrop-blur-sm"
+        >
+            <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                    <label
+                        for="name"
+                        class="block text-sm font-medium text-gray-400 mb-1"
+                        >Nome</label
+                    >
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        class="w-full bg-black border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors"
+                        placeholder="Seu nome"
+                        required
+                    />
+                </div>
+                <div>
+                    <label
+                        for="business"
+                        class="block text-sm font-medium text-gray-400 mb-1"
+                        >Nome do Negócio</label
+                    >
+                    <input
+                        type="text"
+                        id="business"
+                        name="business"
+                        class="w-full bg-black border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors"
+                        placeholder="Sua empresa"
+                        required
+                    />
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                    <label
+                        for="whatsapp"
+                        class="block text-sm font-medium text-gray-400 mb-1"
+                        >WhatsApp</label
+                    >
+                    <input
+                        type="tel"
+                        id="whatsapp"
+                        name="whatsapp"
+                        class="w-full bg-black border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors"
+                        placeholder="(00) 00000-0000"
+                        required
+                    />
+                </div>
+                <div>
+                    <label
+                        for="city"
+                        class="block text-sm font-medium text-gray-400 mb-1"
+                        >Cidade</label
+                    >
+                    <input
+                        type="text"
+                        id="city"
+                        name="city"
+                        class="w-full bg-black border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors"
+                        placeholder="Sua cidade"
+                        required
+                    />
+                </div>
+            </div>
+
+            <div>
+                <label
+                    for="service"
+                    class="block text-sm font-medium text-gray-400 mb-1"
+                    >Serviço Principal</label
+                >
+                <input
+                    type="text"
+                    id="service"
+                    name="service"
+                    class="w-full bg-black border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors"
+                    placeholder="Ex: Clínica Odontológica"
+                    required
+                />
+            </div>
+
+            <div>
+                <label
+                    for="instagram"
+                    class="block text-sm font-medium text-gray-400 mb-1"
+                    >Link do Instagram/Site <span
+                        class="text-gray-600 font-normal">(opcional)</span
+                    ></label
+                >
+                <input
+                    type="url"
+                    id="instagram"
+                    name="instagram"
+                    class="w-full bg-black border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors"
+                    placeholder="https://"
+                />
+            </div>
+
+            <div>
+                <label
+                    for="obs"
+                    class="block text-sm font-medium text-gray-400 mb-1"
+                    >Observação <span class="text-gray-600 font-normal"
+                        >(opcional)</span
+                    ></label
+                >
+                <textarea
+                    id="obs"
+                    name="obs"
+                    rows="3"
+                    class="w-full bg-black border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors"
+                    placeholder="Algo mais a adicionar?"></textarea>
+            </div>
+
+            <div class="flex items-start gap-3 py-2">
+                <input
+                    type="checkbox"
+                    id="lgpd"
+                    name="lgpd"
+                    class="mt-1 w-4 h-4 bg-black border border-white/10 rounded focus:ring-primary text-primary"
+                    required
+                />
+                <label for="lgpd" class="text-xs text-gray-500">
+                    Concordo em enviar meus dados para contato comercial. Seus
+                    dados estão seguros.
+                </label>
+            </div>
+
+            <Button type="submit" variant="primary" class="w-full text-lg py-4">
+                Enviar Solicitação
+            </Button>
+        </form>
+    </div>
+</section>
+
+<footer class="py-12 bg-black border-t border-white/5 text-sm">
+    <div class="container mx-auto px-4">
+        <div
+            class="flex flex-col md:flex-row justify-between items-center gap-6"
+        >
+            <div class="flex flex-col items-center md:items-start gap-2">
+                <span class="font-display font-bold text-xl text-white"
+                    >Ravi Media</span
+                >
+                <p class="text-gray-500">
+                    © {new Date().getFullYear()} Ravi Media. Todos os direitos reservados.
+                </p>
+            </div>
+
+            <nav class="flex flex-wrap justify-center gap-6 text-gray-400">
+                <a
+                    href="#como-funciona"
+                    class="hover:text-white transition-colors">Como funciona</a
+                >
+                <a href="#preco" class="hover:text-white transition-colors"
+                    >Preço</a
+                >
+                <a href="#faq" class="hover:text-white transition-colors">FAQ</a
+                >
+                <a href="#contato" class="hover:text-white transition-colors"
+                    >Contato</a
+                >
+            </nav>
+
+            <div class="flex gap-4 text-gray-500">
+                <a href="#" class="hover:text-white transition-colors">Termos</a
+                >
+                <a href="#" class="hover:text-white transition-colors"
+                    >Privacidade</a
+                >
+            </div>
+        </div>
+        <div class="mt-8 text-center text-xs text-gray-600">
+            CNPJ: 00.000.000/0001-00 • São Paulo, SP
+        </div>
+    </div>
+</footer>

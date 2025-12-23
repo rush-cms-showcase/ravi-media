@@ -1,0 +1,48 @@
+---
+
+---
+
+<section class="py-24 bg-surface text-center">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl lg:text-4xl font-bold mb-16">Como funciona</h2>
+        <div
+            class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto relative z-10"
+        >
+            {
+                [
+                    {
+                        step: "1",
+                        title: "Diagnóstico Técnico",
+                        desc: "Auditoria de performance + Análise SEO",
+                    },
+                    {
+                        step: "2",
+                        title: "Definição do Plano",
+                        desc: "Lite / Standard / Rebuild com escopo fechado",
+                    },
+                    {
+                        step: "3",
+                        title: "Execução + Entrega",
+                        desc: "Checklist técnico e próximos passos",
+                    },
+                ].map((item) => (
+                    <div class="flex flex-col items-center group">
+                        <div class="w-16 h-16 rounded-2xl bg-black border border-white/10 group-hover:border-red-500 group-hover:bg-red-500/10 group-hover:text-red-500 transition-all duration-300 flex items-center justify-center text-xl font-bold text-white mb-4 shadow-lg">
+                            {item.step}
+                        </div>
+                        <h3 class="font-bold text-white mb-1">{item.title}</h3>
+                        <p class="text-sm text-gray-400">{item.desc}</p>
+                    </div>
+                ))
+            }
+        </div>
+        <div
+            class="mt-12 p-6 bg-black/30 border border-white/5 rounded-2xl max-w-2xl mx-auto"
+        >
+            <p class="text-sm text-gray-500 italic">
+                "O diagnóstico existe para evitar chute e garantir transparência
+                sobre o que realmente está travando o site."
+            </p>
+        </div>
+    </div>
+</section>

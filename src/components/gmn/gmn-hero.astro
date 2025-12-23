@@ -1,0 +1,114 @@
+---
+import Button from "@/components/ui/button.astro";
+---
+
+<section
+    class="relative min-h-[600px] flex items-center pt-32 pb-20 overflow-hidden"
+>
+    <!-- Background Glow -->
+    <div
+        class="absolute top-0 center w-full h-[600px] bg-blue-500/10 blur-[150px] pointer-events-none opacity-40"
+    >
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10 text-center">
+        <div class="max-w-4xl mx-auto space-y-8">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-mono text-blue-400 mb-4"
+            >
+                <span class="relative flex h-2 w-2">
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"
+                    ></span>
+                    <span
+                        class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"
+                    ></span>
+                </span>
+                Visibilidade Local
+            </div>
+
+            <h1
+                class="text-4xl lg:text-7xl font-display font-bold leading-tight tracking-tight"
+            >
+                Apareça melhor no Google e receba mais <span
+                    class="bg-blue-500/10 px-2 rounded-lg text-blue-500"
+                    >contatos locais</span
+                >.
+            </h1>
+
+            <p
+                class="text-xl lg:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed"
+            >
+                O Google Meu Negócio Turbo é uma otimização completa do seu
+                perfil, com SEO local e estratégia de avaliações — feito para
+                negócios que dependem de busca local e WhatsApp para vender.
+            </p>
+
+            <div
+                class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
+            >
+                <Button
+                    href="https://wa.me/5500000000000?text=Quero%20diagn%C3%B3stico%20Google%20Turbo"
+                    target="_blank"
+                    variant="secondary"
+                    class="w-full sm:w-auto text-lg px-8 py-4 bg-blue-500! text-white! hover:bg-blue-400! border-none"
+                >
+                    Quero um diagnóstico rápido
+                </Button>
+            </div>
+
+            <div
+                class="flex items-center justify-center gap-4 text-xs lg:text-sm text-gray-500 pt-8 border-t border-white/5 mt-8 max-w-lg mx-auto"
+            >
+                <div class="flex items-center gap-2">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="text-blue-500"
+                        ><polyline points="20 6 9 17 4 12"></polyline></svg
+                    >
+                    Prazo 3 a 5 dias
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="text-blue-500"
+                        ><polyline points="20 6 9 17 4 12"></polyline></svg
+                    >
+                    SEO Local
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="text-blue-500"
+                        ><polyline points="20 6 9 17 4 12"></polyline></svg
+                    >
+                    Caixa Rápido
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,23 @@
+---
+import Layout from "@/layouts/layout.astro";
+import Navbar from "@/components/common/navbar.astro";
+import FormFooter from "@/components/common/form-footer.astro";
+
+import GmnHero from "@/components/gmn/gmn-hero.astro";
+import GmnAudience from "@/components/gmn/gmn-audience.astro";
+import GmnOffer from "@/components/gmn/gmn-offer.astro";
+import GmnProcess from "@/components/gmn/gmn-process.astro";
+import GmnRequirements from "@/components/gmn/gmn-requirements.astro";
+---
+
+<Layout>
+    <Navbar />
+    <main>
+        <GmnHero />
+        <GmnAudience />
+        <GmnOffer />
+        <GmnProcess />
+        <GmnRequirements />
+    </main>
+    <FormFooter />
+</Layout>
