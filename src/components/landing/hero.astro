@@ -1,156 +1,51 @@
 ---
-import Button from "@/components/ui/button.astro"
-import MockupRotator from "@/components/landing/mockup-rotator"
-import { Icon } from "astro-icon/components"
+import HeroSection from "@/components/common/hero-section.astro"
 import { getWhatsAppLink, whatsappMessages } from "@/utils/whatsapp"
-
-const whatsappDiagnostico = getWhatsAppLink(whatsappMessages.diagnostico)
+import MockupRotator from "@/components/landing/mockup-rotator"
 ---
 
-<section
-    class="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden"
->
-    <div
-        class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-slate-900/50 blur-[120px] rounded-full pointer-events-none opacity-40"
-    >
-    </div>
-    <div
-        class="absolute bottom-0 right-0 w-[800px] h-[600px] bg-blue-500/10 blur-[120px] rounded-full pointer-events-none opacity-30"
-    >
-    </div>
-
-    <div class="container mx-auto px-4 relative z-10">
-        <div class="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 items-center">
-            <div class="space-y-8 text-center lg:text-left">
-                <div class="space-y-4">
-                    <h1
-                        class="text-4xl lg:text-6xl font-display font-bold leading-tight"
-                    >
-                        Uma landing page feita para gerar mensagens no seu <span
-                            class="text-primary">WhatsApp</span
-                        >
-                    </h1>
-                    <p class="text-xl text-gray-400 max-w-2xl mx-auto lg:mx-0">
-                        Entrega em 5 a 7 dias úteis, com escopo fechado, CTA
-                        claro e integração com WhatsApp — sem enrolação e sem
-                        revisões infinitas
-                    </p>
-                </div>
-
-                <div
-                    class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start"
-                >
-                    <Button
-                        href={whatsappDiagnostico}
-                        variant="primary"
-                        class="w-full sm:w-auto text-lg px-8 py-4"
-                    >
-                        Pedir diagnóstico rápido
-                    </Button>
-                    <Button
-                        href="#como-funciona"
-                        variant="secondary"
-                        class="w-full sm:w-auto text-lg px-8 py-4"
-                    >
-                        Ver como funciona
-                    </Button>
-                </div>
-
-                <p
-                    class="text-sm text-gray-500 flex items-center justify-center lg:justify-start gap-2"
-                >
-                    <Icon name="lucide:check" class="w-4 h-4 text-primary" />
-                    Processo simples. Uma rodada de revisão. Entrega objetiva
-                </p>
+<HeroSection
+    title="Uma landing page feita para gerar mensagens no seu <span class='text-primary'>WhatsApp</span>"
+    subtitle="Entrega em 5 a 7 dias úteis, com escopo fechado, CTA claro e integração com WhatsApp — sem enrolação e sem revisões infinitas"
+    primaryButton={{
+        text: "Pedir diagnóstico rápido",
+        href: getWhatsAppLink(whatsappMessages.landingPage.hero)
+    }}
+    secondaryButton={{
+        text: "Ver como funciona",
+        href: "#como-funciona"
+    }}
+    checkText="Processo simples. Uma rodada de revisão. Entrega objetiva"
+    bgColor="bg-slate-900/50"
+    simulator={MockupRotator}
+    simulatorFallback={`
+        <div class="w-full h-full bg-zinc-900 border border-white/5 rounded-xl flex flex-col items-center justify-center p-6">
+            <div class="w-full flex justify-between mb-6">
+                <div class="w-8 h-8 bg-zinc-800 rounded-full animate-pulse"></div>
+                <div class="w-20 h-8 bg-zinc-800 rounded animate-pulse"></div>
             </div>
-
-            <div class="hidden lg:block relative">
-                <div
-                    class="relative z-10 bg-surface border border-white/10 rounded-2xl p-2 shadow-2xl lg:rotate-1 lg:hover:rotate-0 transition-transform duration-700"
-                    id="lp-mockup"
-                >
-                    <div class="aspect-video bg-black/50 rounded-lg relative">
-                        <MockupRotator client:only="react" cycleInterval={3500}>
-                            <div slot="fallback" class="w-full h-full bg-zinc-900 border border-white/5 rounded-xl flex flex-col items-center justify-center p-6">
-                                <div class="w-full flex justify-between mb-6">
-                                    <div class="w-8 h-8 bg-zinc-800 rounded-full animate-pulse"></div>
-                                    <div class="w-20 h-8 bg-zinc-800 rounded animate-pulse"></div>
-                                </div>
-                                <div class="w-3/4 h-8 bg-zinc-800 rounded mb-3 animate-pulse"></div>
-                                <div class="w-1/2 h-4 bg-zinc-800 rounded mb-8 animate-pulse"></div>
-                                <div class="grid grid-cols-3 gap-3 w-full opacity-50">
-                                    <div class="aspect-square bg-zinc-800 rounded-lg animate-pulse"></div>
-                                    <div class="aspect-square bg-zinc-800 rounded-lg animate-pulse"></div>
-                                    <div class="aspect-square bg-zinc-800 rounded-lg animate-pulse"></div>
-                                </div>
-                            </div>
-                        </MockupRotator>
-
-                        <div
-                            class="absolute bottom-4 right-4 bg-green-500/20 items-center gap-2 px-3 py-1 rounded-full border border-green-500/20 hidden md:flex"
-                        >
-                            <span
-                                class="w-2 h-2 rounded-full bg-green-500 animate-pulse"
-                            ></span>
-                            <span
-                                class="text-xs font-mono text-green-500 uppercase tracking-wider"
-                                >Online</span
-                            >
-                        </div>
-
-                        <div
-                            class="absolute -top-6 -left-6 bg-slate-900/60 backdrop-blur-xl border border-white/20 p-4 rounded-xl shadow-2xl flex items-center gap-4"
-                        >
-                            <div
-                                class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-primary"
-                            >
-                                <Icon name="lucide:phone" class="w-5 h-5" />
-                            </div>
-                            <div>
-                                <div class="text-xs text-gray-400">
-                                    Conversão
-                                </div>
-                                <div class="font-bold text-white">
-                                    +15% Leads
-                                </div>
-                            </div>
-                        </div>
-
-                        <div
-                            class="absolute -bottom-6 -right-6 bg-[#25D366] p-3 rounded-full shadow-xl shadow-black/50"
-                        >
-                            <Icon name="lucide:phone" class="w-8 h-8 text-white" />
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    class="absolute -inset-4 bg-primary/20 blur-xl -z-10 rounded-2xl lg:rotate-3"
-                >
-                </div>
+            <div class="w-3/4 h-8 bg-zinc-800 rounded mb-3 animate-pulse"></div>
+            <div class="w-1/2 h-4 bg-zinc-800 rounded mb-8 animate-pulse"></div>
+            <div class="grid grid-cols-3 gap-3 w-full opacity-50">
+                <div class="aspect-square bg-zinc-800 rounded-lg animate-pulse"></div>
+                <div class="aspect-square bg-zinc-800 rounded-lg animate-pulse"></div>
+                <div class="aspect-square bg-zinc-800 rounded-lg animate-pulse"></div>
             </div>
         </div>
-
-        <div
-            class="mt-20 pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-end gap-6 text-gray-500 text-sm"
-        >
-            <p>Otimizado para:</p>
-            <div
-                class="flex flex-wrap justify-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500"
-            >
-                <span class="font-bold flex items-center gap-2">
-                    <Icon name="simple-icons:google" class="w-4 h-4" />
-                    Google Ads
-                </span>
-                <span class="font-bold flex items-center gap-2">
-                    <Icon name="simple-icons:instagram" class="w-4 h-4" />
-                    Instagram Ads
-                </span>
-                <span class="font-bold flex items-center gap-2">
-                    <Icon name="simple-icons:facebook" class="w-4 h-4" />
-                    Facebook Ads
-                </span>
-            </div>
-        </div>
-    </div>
-</section>
+    `}
+    topBadge={{
+        icon: "lucide:phone",
+        label: "Conversão",
+        value: "+15% Leads",
+        color: "primary"
+    }}
+    bottomIcon={{
+        name: "lucide:phone",
+        bgColor: "bg-[#25D366]"
+    }}
+    stats={[
+        { icon: "simple-icons:google", text: "Google Ads" },
+        { icon: "simple-icons:instagram", text: "Instagram Ads" },
+        { icon: "simple-icons:facebook", text: "Facebook Ads" }
+    ]}
+/>

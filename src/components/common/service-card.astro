@@ -1,0 +1,79 @@
+---
+import Button from "@/components/ui/button.astro"
+import { Icon } from "astro-icon/components"
+
+interface Props {
+    title: string
+    subtitle: string
+    price?: string
+    priceLabel?: string
+    features: string[]
+    buttonText: string
+    buttonHref: string
+    buttonVariant?: "primary" | "secondary"
+    featured?: boolean
+    badge?: string
+    checkColor?: string
+    borderColor?: string
+    textColor?: string
+    scale?: boolean
+}
+
+const {
+    title,
+    subtitle,
+    price,
+    priceLabel,
+    features,
+    buttonText,
+    buttonHref,
+    buttonVariant = "secondary",
+    featured = false,
+    badge,
+    checkColor = "green-500",
+    borderColor = "white/10",
+    textColor = "gray-400",
+    scale = false
+} = Astro.props
+
+const cardClasses = featured
+    ? `bg-surface border border-${borderColor} rounded-2xl p-8 relative shadow-2xl ${scale ? 'scale-105 z-10' : ''}`
+    : `bg-surface border border-${borderColor} rounded-2xl p-8 hover:border-${borderColor.replace('/10', '/30')} transition-colors`
+---
+
+<div class={cardClasses}>
+    {badge && (
+        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">
+            {badge}
+        </div>
+    )}
+
+    <div class="mb-6">
+        <h3 class="text-xl font-bold text-white">{title}</h3>
+        <p class={`text-sm font-mono mt-1 text-${featured ? textColor.replace('gray', 'white') : textColor}`}>
+            {subtitle}
+        </p>
+    </div>
+
+    {price && (
+        <div class="text-3xl font-bold text-white mb-6">
+            {priceLabel && (
+                <span class="text-sm font-normal text-gray-400 block mb-1">{priceLabel}</span>
+            )}
+            {price}
+        </div>
+    )}
+
+    <ul class="space-y-4 mb-8">
+        {features.map(feature => (
+            <li class={`flex items-start gap-3 text-sm ${featured ? 'text-white' : 'text-gray-400'}`}>
+                <Icon name="lucide:check" class={`w-4 h-4 text-${checkColor} mt-0.5 shrink-0`} />
+                <span>{feature}</span>
+            </li>
+        ))}
+    </ul>
+
+    <Button href={buttonHref} variant={buttonVariant} class="w-full">
+        {buttonText}
+    </Button>
+</div>

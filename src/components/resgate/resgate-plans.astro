@@ -1,11 +1,6 @@
 ---
-import Button from "@/components/ui/button.astro";
-import { Icon } from "astro-icon/components";
-import { getWhatsAppLink } from "@/utils/whatsapp";
-
-const whatsappLite = getWhatsAppLink("Olá! Quero saber sobre o Resgate Lite.")
-const whatsappStandard = getWhatsAppLink("Olá! Preciso de um diagnóstico para o Resgate Standard.")
-const whatsappRebuild = getWhatsAppLink("Olá! Meu site não tem jeito, quero falar sobre Rebuild.")
+import ServiceCard from "@/components/common/service-card.astro"
+import { getWhatsAppLink, whatsappMessages } from "@/utils/whatsapp"
 ---
 
 <section id="planos" class="py-24 bg-black border-t border-white/5">
@@ -20,98 +15,57 @@ const whatsappRebuild = getWhatsAppLink("Olá! Meu site não tem jeito, quero fa
         </div>
 
         <div class="grid lg:grid-cols-3 gap-8 max-w-5xl mx-auto items-start">
-            <!-- Lite -->
-            <div class="bg-surface border border-white/10 rounded-2xl p-8 hover:border-red-500/30 transition-colors">
-                <div class="mb-6">
-                    <h3 class="text-xl font-bold text-white">Resgate Lite</h3>
-                    <p class="text-sm text-gray-500 font-mono mt-1">Correções visuais</p>
-                </div>
-                <div class="text-3xl font-bold text-white mb-6">
-                    R$ 400 <span class="text-sm font-normal text-gray-500">/ único</span>
-                </div>
-                <ul class="space-y-4 mb-8">
-                    <li class="flex items-start gap-3 text-sm text-gray-400">
-                        <Icon name="lucide:check" class="w-4 h-4 text-green-500 mt-0.5" />
-                        <span>Bugs de layout (CSS)</span>
-                    </li>
-                    <li class="flex items-start gap-3 text-sm text-gray-400">
-                        <Icon name="lucide:check" class="w-4 h-4 text-green-500 mt-0.5" />
-                        <span>Ajustes de texto/foto</span>
-                    </li>
-                    <li class="flex items-start gap-3 text-sm text-gray-400">
-                        <Icon name="lucide:check" class="w-4 h-4 text-green-500 mt-0.5" />
-                        <span>Otimização básica de imagens</span>
-                    </li>
-                </ul>
-                <Button href={whatsappLite} variant="secondary" class="w-full">
-                    Quero o Lite
-                </Button>
-            </div>
+            <ServiceCard
+                title="Resgate Básico"
+                subtitle="Correções visuais"
+                price="R$ 400"
+                priceLabel="/ único"
+                features={[
+                    "Bugs de layout (CSS)",
+                    "Ajustes de texto/foto",
+                    "Otimização básica de imagens"
+                ]}
+                buttonText="Quero o Básico"
+                buttonHref={getWhatsAppLink(whatsappMessages.resgate.plans.basico)}
+            />
 
-            <!-- Standard -->
-            <div class="bg-surface border border-red-500 rounded-2xl p-8 relative shadow-2xl shadow-red-500/10 scale-105 z-10">
-                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-red-600 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">
-                    Recomendado
-                </div>
-                <div class="mb-6">
-                    <h3 class="text-xl font-bold text-white">Resgate Standard</h3>
-                    <p class="text-sm text-red-200 font-mono mt-1">Performance & SEO</p>
-                </div>
-                <div class="text-3xl font-bold text-white mb-6">
-                    <span class="text-sm font-normal text-gray-400 block mb-1">A partir de</span>
-                    R$ 900
-                </div>
-                <ul class="space-y-4 mb-8">
-                    <li class="flex items-start gap-3 text-sm text-white">
-                        <Icon name="lucide:check" class="w-4 h-4 text-red-500 mt-0.5" />
-                        <span>Diagnóstico Core Web Vitals</span>
-                    </li>
-                    <li class="flex items-start gap-3 text-sm text-white">
-                        <Icon name="lucide:check" class="w-4 h-4 text-red-500 mt-0.5" />
-                        <span>Configuração de Cache/CDN</span>
-                    </li>
-                    <li class="flex items-start gap-3 text-sm text-white">
-                        <Icon name="lucide:check" class="w-4 h-4 text-red-500 mt-0.5" />
-                        <span>SEO Técnico e Sitemap</span>
-                    </li>
-                    <li class="flex items-start gap-3 text-sm text-white">
-                        <Icon name="lucide:check" class="w-4 h-4 text-red-500 mt-0.5" />
-                        <span>Limpeza de banco de dados</span>
-                    </li>
-                </ul>
-                <Button href={whatsappStandard} variant="primary" class="w-full bg-red-600! hover:bg-red-500!">
-                    Solicitar Diagnóstico
-                </Button>
-            </div>
+            <ServiceCard
+                title="Resgate Completo"
+                subtitle="Performance & SEO"
+                price="R$ 900"
+                priceLabel="A partir de"
+                features={[
+                    "Diagnóstico Core Web Vitals",
+                    "Configuração de Cache/CDN",
+                    "SEO Técnico e Sitemap",
+                    "Limpeza de banco de dados",
+                    "Correções de segurança básicas"
+                ]}
+                buttonText="Quero o Completo"
+                buttonHref={getWhatsAppLink(whatsappMessages.resgate.plans.completo)}
+                featured={true}
+                badge="Recomendado"
+                checkColor="red-500"
+                borderColor="red-500"
+                textColor="red-200"
+                scale={true}
+            />
 
-            <!-- Rebuild -->
-            <div class="bg-surface border border-white/10 rounded-2xl p-8 hover:border-red-500/30 transition-colors">
-                <div class="mb-6">
-                    <h3 class="text-xl font-bold text-white">Rebuild</h3>
-                    <p class="text-sm text-gray-500 font-mono mt-1">Refazer do zero</p>
-                </div>
-                <div class="text-3xl font-bold text-white mb-6">
-                    <span class="text-sm font-normal text-gray-400 block mb-1">Base</span>
-                    R$ 1.500
-                </div>
-                <ul class="space-y-4 mb-8">
-                    <li class="flex items-start gap-3 text-sm text-gray-400">
-                        <Icon name="lucide:check" class="w-4 h-4 text-green-500 mt-0.5" />
-                        <span>Nova tecnologia (Astro)</span>
-                    </li>
-                    <li class="flex items-start gap-3 text-sm text-gray-400">
-                        <Icon name="lucide:check" class="w-4 h-4 text-green-500 mt-0.5" />
-                        <span>Design moderno</span>
-                    </li>
-                    <li class="flex items-start gap-3 text-sm text-gray-400">
-                        <Icon name="lucide:check" class="w-4 h-4 text-green-500 mt-0.5" />
-                        <span>Hospedagem inclusa</span>
-                    </li>
-                </ul>
-                <Button href={whatsappRebuild} variant="secondary" class="w-full">
-                    Falar sobre Rebuild
-                </Button>
-            </div>
+            <ServiceCard
+                title="Resgate Premium"
+                subtitle="Migração completa"
+                price="Sob consulta"
+                features={[
+                    "Stack moderna (Astro, Next, etc)",
+                    "Redesign UI/UX",
+                    "Migração de conteúdo",
+                    "Otimização profunda",
+                    "Configuração de CI/CD",
+                    "Treinamento"
+                ]}
+                buttonText="Quero o Premium"
+                buttonHref={getWhatsAppLink(whatsappMessages.resgate.plans.premium)}
+            />
         </div>
     </div>
 </section>
