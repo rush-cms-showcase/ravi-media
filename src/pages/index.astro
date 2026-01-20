@@ -1,25 +1,24 @@
 ---
-import Layout from "@/layouts/layout.astro";
-import Navbar from "@/components/common/navbar.astro";
-
-
-import PortalHero from "@/components/portal/portal-hero.astro";
-import ServiceCards from "@/components/portal/service-cards.astro";
-import PortalWhy from "@/components/portal/portal-why.astro";
-import PortalContent from "@/components/portal/portal-content.astro";
-import PortalFaq from "@/components/portal/portal-faq.astro";
-import Footer from "@/components/common/footer.astro";
+import Layout from "@/layouts/layout.astro"
+import Navbar from "@/components/common/navbar.astro"
+import PortalHero from "@/components/portal/portal-hero.astro"
+import ServiceCards from "@/components/portal/service-cards.astro"
+import PortalWhy from "@/components/portal/portal-why.astro"
+import PortalContent from "@/components/portal/portal-content.astro"
+import PortalFaq from "@/components/portal/portal-faq.astro"
+import Footer from "@/components/common/footer.astro"
 ---
 
-<Layout>
+<Layout
+    title="Ravi Media | Performance e Infraestrutura Digital"
+    description="Especialistas em websites de alta performance, SEO local e landing pages para conversão. Landing pages em 5-7 dias, otimização GMN em 3-5 dias, resgate de sites legados."
+>
     <Navbar />
     <main>
         <PortalHero />
         <ServiceCards />
         <PortalWhy />
         <PortalContent />
-        <!-- Includes Process & About -->
-        <!-- Includes Process & About -->
         <PortalFaq />
         <Footer />
     </main>
