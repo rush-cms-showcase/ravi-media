@@ -25,8 +25,6 @@ interface Props {
     checkText: string
     checkColor?: string
     bgColor: string
-    simulator: any
-    simulatorFallback?: any
     topBadge?: {
         icon: string
         label: string
@@ -54,8 +52,6 @@ const {
     checkText,
     checkColor = "primary",
     bgColor,
-    simulator: Simulator,
-    simulatorFallback,
     topBadge,
     bottomIcon,
     stats,
@@ -118,11 +114,7 @@ const {
             <div class="hidden lg:block relative">
                 <div class="relative z-10 bg-surface border border-white/10 rounded-2xl p-2 shadow-2xl lg:rotate-1 lg:hover:rotate-0 transition-transform duration-700">
                     <div class="aspect-video bg-black/50 rounded-lg relative">
-                        <Simulator client:only="react" cycleInterval={5000}>
-                            {simulatorFallback && (
-                                <Fragment slot="fallback" set:html={simulatorFallback} />
-                            )}
-                        </Simulator>
+                        <slot name="simulator" />
 
                         {topBadge && (
                             <div class="absolute -top-6 -left-6 bg-slate-900/40 backdrop-blur-xl border border-white/20 p-4 rounded-xl shadow-2xl flex items-center gap-4">

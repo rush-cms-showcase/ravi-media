@@ -27,9 +27,24 @@ import RescueSimulator from "@/components/resgate/rescue-simulator"
     checkText="Auditoria completa incluída. Diagnóstico em 24h"
     checkColor="red-500"
     bgColor="bg-red-900/20"
-    simulator={RescueSimulator}
-    simulatorFallback={`
-        <div class="w-full h-full bg-zinc-900 border border-white/5 rounded-xl flex flex-col items-center justify-center p-6">
+    topBadge={{
+        icon: "lucide:activity",
+        label: "Performance",
+        value: "35 → 95",
+        color: "red"
+    }}
+    bottomIcon={{
+        name: "lucide:wrench",
+        bgColor: "bg-red-600"
+    }}
+    stats={[
+        { icon: "lucide:zap", text: "Velocidade" },
+        { icon: "lucide:shield-check", text: "Segurança" },
+        { icon: "lucide:trending-up", text: "Conversão" }
+    ]}
+>
+    <RescueSimulator slot="simulator" client:load>
+        <div slot="fallback" class="w-full h-full bg-zinc-900 border border-white/5 rounded-xl flex flex-col items-center justify-center p-6">
             <div class="w-full flex items-center justify-between mb-6">
                 <div class="w-8 h-8 bg-red-800 rounded animate-pulse"></div>
                 <div class="w-16 h-6 bg-zinc-800 rounded animate-pulse"></div>
@@ -49,20 +64,5 @@ import RescueSimulator from "@/components/resgate/rescue-simulator"
                 </div>
             </div>
         </div>
-    `}
-    topBadge={{
-        icon: "lucide:activity",
-        label: "Performance",
-        value: "35 → 95",
-        color: "red"
-    }}
-    bottomIcon={{
-        name: "lucide:wrench",
-        bgColor: "bg-red-600"
-    }}
-    stats={[
-        { icon: "lucide:zap", text: "Velocidade" },
-        { icon: "lucide:shield-check", text: "Segurança" },
-        { icon: "lucide:trending-up", text: "Conversão" }
-    ]}
-/>
+    </RescueSimulator>
+</HeroSection>

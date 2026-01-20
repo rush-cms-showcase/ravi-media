@@ -1,0 +1,59 @@
+---
+import { Icon } from "astro-icon/components"
+
+interface Feature {
+    icon: string
+    title?: string
+    description?: string
+    text?: string
+    iconColor?: string
+    iconBg?: string
+}
+
+interface Props {
+    features: Feature[]
+    variant?: "simple" | "detailed"
+    checkColor?: string
+    spacing?: "compact" | "normal" | "relaxed"
+    textColor?: string
+}
+
+const {
+    features,
+    variant = "simple",
+    checkColor = "green-500",
+    spacing = "normal",
+    textColor = "gray-400"
+} = Astro.props
+
+const spacingClasses = {
+    compact: "space-y-2",
+    normal: "space-y-4",
+    relaxed: "space-y-5"
+}
+---
+
+{variant === "simple" ? (
+    <ul class={spacingClasses[spacing]}>
+        {features.map(feature => (
+            <li class={`flex items-start gap-3 text-sm text-${textColor}`}>
+                <Icon name={feature.icon || "lucide:check"} class={`w-4 h-4 text-${feature.iconColor || checkColor} mt-0.5 shrink-0`} />
+                <span>{feature.text || feature.title}</span>
+            </li>
+        ))}
+    </ul>
+) : (
+    <div class={spacingClasses[spacing]}>
+        {features.map(feature => (
+            <div class="flex items-start gap-4">
+                <div class={`w-10 h-10 ${feature.iconBg || `bg-${feature.iconColor || 'primary'}-500/10`} rounded-xl flex items-center justify-center shrink-0`}>
+                    <Icon name={feature.icon} class={`w-5 h-5 text-${feature.iconColor || 'primary'}-500`} />
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-1">{feature.title}</h4>
+                    <p class={`text-sm text-${textColor}`}>{feature.description}</p>
+                </div>
+            </div>
+        ))}
+    </div>
+)}

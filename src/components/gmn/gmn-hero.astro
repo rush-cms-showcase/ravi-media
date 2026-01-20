@@ -27,17 +27,6 @@ import GmnSearchSimulator from "@/components/gmn/gmn-search-simulator"
     checkText="Entrega em 3 a 5 dias úteis. Processo objetivo"
     checkColor="blue-500"
     bgColor="bg-blue-900/20"
-    simulator={GmnSearchSimulator}
-    simulatorFallback={`
-        <div class="w-full h-full bg-white flex flex-col items-center justify-center p-6">
-            <div class="w-32 h-10 mb-8 bg-gray-100 rounded-lg animate-pulse"></div>
-            <div class="w-full max-w-sm h-12 bg-white border border-gray-200 rounded-full mb-6"></div>
-            <div class="flex gap-3">
-                <div class="w-20 h-8 bg-gray-100 rounded-full animate-pulse"></div>
-                <div class="w-20 h-8 bg-blue-100 rounded-full animate-pulse"></div>
-            </div>
-        </div>
-    `}
     topBadge={{
         icon: "lucide:trending-up",
         label: "Ranking",
@@ -53,4 +42,15 @@ import GmnSearchSimulator from "@/components/gmn/gmn-search-simulator"
         { icon: "lucide:star", text: "Avaliações" },
         { icon: "lucide:phone", text: "Ligações Diretas" }
     ]}
-/>
+>
+    <GmnSearchSimulator slot="simulator" client:load cycleInterval={5000}>
+        <div slot="fallback" class="w-full h-full bg-white flex flex-col items-center justify-center p-6">
+            <div class="w-32 h-10 mb-8 bg-gray-100 rounded-lg animate-pulse"></div>
+            <div class="w-full max-w-sm h-12 bg-white border border-gray-200 rounded-full mb-6"></div>
+            <div class="flex gap-3">
+                <div class="w-20 h-8 bg-gray-100 rounded-full animate-pulse"></div>
+                <div class="w-20 h-8 bg-blue-100 rounded-full animate-pulse"></div>
+            </div>
+        </div>
+    </GmnSearchSimulator>
+</HeroSection>
