@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
-// --- Types & Interfaces ---
 
 interface MockupRotatorProps {
     className?: string;
@@ -11,8 +9,6 @@ interface MockupRotatorProps {
 type VariantType = 'standard' | 'vsl' | 'lead' | 'portfolio' | 'ecommerce';
 
 const VARIANTS: VariantType[] = ['standard', 'vsl', 'lead', 'portfolio', 'ecommerce'];
-
-// --- Animation Variants ---
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -38,8 +34,6 @@ const itemVariants = {
     exit: { opacity: 0, y: -10, scale: 0.95 },
 };
 
-// --- Reusable Parts ---
-
 const MockupHeader = () => (
     <motion.div variants={itemVariants} className="w-full flex justify-between items-center mb-6">
         <div className="w-8 h-8 bg-zinc-700 rounded-full" />
@@ -51,9 +45,6 @@ const MockupHeader = () => (
     </motion.div>
 );
 
-// --- Sub-components (The "LPs") ---
-
-// 1. Standard LP: Header + Text + Features
 const StandardVariant = () => (
     <motion.div
         variants={containerVariants}
@@ -81,7 +72,6 @@ const StandardVariant = () => (
     </motion.div>
 );
 
-// 2. VSL LP: Header + Headline + Big Video + CTA
 const VslVariant = () => (
     <motion.div
         variants={containerVariants}
@@ -92,27 +82,22 @@ const VslVariant = () => (
     >
         <MockupHeader />
 
-        {/* Headline */}
         <motion.div variants={itemVariants} className="w-full h-6 bg-amber-500/20 rounded mb-2" />
         <motion.div variants={itemVariants} className="w-2/3 h-4 bg-zinc-700 rounded mb-6" />
 
-        {/* Video Player */}
         <motion.div variants={itemVariants} className="w-full aspect-video bg-zinc-800 rounded-lg border border-white/10 flex items-center justify-center relative shadow-xl">
             <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm">
                 <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[14px] border-l-white border-b-[8px] border-b-transparent ml-1" />
             </div>
-            {/* Progress bar */}
             <div className="absolute bottom-2 left-2 right-2 h-1 bg-zinc-700 rounded-full overflow-hidden">
                 <div className="h-full w-1/3 bg-red-500" />
             </div>
         </motion.div>
 
-        {/* CTA */}
         <motion.div variants={itemVariants} className="w-full h-12 bg-green-500 rounded-lg mt-6 shadow-lg shadow-green-500/20" />
     </motion.div>
 );
 
-// 3. Lead Capture LP: Header + Split Layout
 const LeadVariant = () => (
     <motion.div
         variants={containerVariants}
@@ -127,7 +112,6 @@ const LeadVariant = () => (
         </div>
 
         <div className="flex flex-1 w-full">
-            {/* Left: Value Prop */}
             <div className="w-1/2 p-6 flex flex-col justify-center space-y-4 border-r border-white/5 bg-zinc-800/30">
                 <motion.div variants={itemVariants} className="w-10 h-10 bg-blue-500/20 rounded-lg mb-2" />
                 <motion.div variants={itemVariants} className="w-full h-6 bg-zinc-700 rounded" />
@@ -150,7 +134,6 @@ const LeadVariant = () => (
     </motion.div>
 );
 
-// 4. Portfolio/Gallery: Header + Grid of Images
 const PortfolioVariant = () => (
     <motion.div
         variants={containerVariants}
@@ -161,10 +144,8 @@ const PortfolioVariant = () => (
     >
         <MockupHeader />
 
-        {/* Title */}
         <motion.div variants={itemVariants} className="w-1/2 h-6 bg-zinc-700 rounded mb-6" />
 
-        {/* Gallery Grid */}
         <div className="grid grid-cols-2 gap-4 w-full h-full">
             <motion.div variants={itemVariants} className="w-full h-32 bg-purple-500/20 rounded-lg border border-purple-500/20" />
             <motion.div variants={itemVariants} className="w-full h-32 bg-blue-500/20 rounded-lg border border-blue-500/20" />
@@ -174,7 +155,6 @@ const PortfolioVariant = () => (
     </motion.div>
 );
 
-// 5. E-commerce: Header + Product Detail
 const EcommerceVariant = () => (
     <motion.div
         variants={containerVariants}
@@ -186,13 +166,11 @@ const EcommerceVariant = () => (
         <MockupHeader />
 
         <div className="flex w-full h-full p-6 pt-0 gap-6 items-center">
-            {/* Left: Product Image */}
             <motion.div variants={itemVariants} className="w-1/2 aspect-square bg-zinc-800 rounded-xl border border-white/5 relative flex items-center justify-center">
                 <div className="w-16 h-16 bg-zinc-700 rounded-full" />
                 <div className="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/5" />
             </motion.div>
 
-            {/* Right: Product Info */}
             <div className="w-1/2 flex flex-col space-y-3">
                 <motion.div variants={itemVariants} className="w-20 h-4 bg-primary/20 text-primary text-[10px] flex items-center justify-center rounded-full">NOVIDADE</motion.div>
                 <motion.div variants={itemVariants} className="w-full h-8 bg-zinc-700 rounded" />
@@ -203,8 +181,6 @@ const EcommerceVariant = () => (
         </div>
     </motion.div>
 );
-
-// --- Main Rotator Component ---
 
 export default function MockupRotator({ cycleInterval = 4000, className = "" }: MockupRotatorProps) {
     const [index, setIndex] = useState(0);
@@ -219,7 +195,7 @@ export default function MockupRotator({ cycleInterval = 4000, className = "" }: 
     const currentVariant = VARIANTS[index];
 
     return (
-        <div className={`relative w-full h-full overflow-hidden ${className}`}>
+        <div className={`relative w-full h-full overflow-hidden rounded-lg ${className}`}>
             <AnimatePresence mode="wait">
                 {currentVariant === 'standard' && <StandardVariant key="standard" />}
                 {currentVariant === 'vsl' && <VslVariant key="vsl" />}
@@ -227,17 +203,6 @@ export default function MockupRotator({ cycleInterval = 4000, className = "" }: 
                 {currentVariant === 'portfolio' && <PortfolioVariant key="portfolio" />}
                 {currentVariant === 'ecommerce' && <EcommerceVariant key="ecommerce" />}
             </AnimatePresence>
-
-            {/* Progress Indicators */}
-            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-                {VARIANTS.map((v, i) => (
-                    <div
-                        key={v}
-                        className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${i === index ? 'bg-primary w-4' : 'bg-white/20'
-                            }`}
-                    />
-                ))}
-            </div>
         </div>
     );
 }

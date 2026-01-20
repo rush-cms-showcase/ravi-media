@@ -1,9 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import Button from "@/components/ui/button.astro";
+import { getWhatsAppLink, whatsappMessages } from "@/utils/whatsapp";
 
 const navItems = [
-    { name: "Home", href: "/" },
     {
         name: "Serviços",
         href: "#servicos",
@@ -17,8 +17,7 @@ const navItems = [
         ],
     },
     { name: "Como funciona", href: "/#como-funciona" },
-    { name: "Sobre", href: "/#sobre" },
-    { name: "Contato", href: "/#contato" },
+    { name: "Sobre", href: "/sobre-nos" },
 ];
 ---
 
@@ -82,9 +81,9 @@ const navItems = [
             }
         </ul>
 
-        <div class="pl-2 pr-1 ml-2">
+        <div class="px-2">
             <Button
-                href="https://wa.me/5500000000000"
+                href={getWhatsAppLink(whatsappMessages.contato)}
                 target="_blank"
                 variant="primary"
                 class="py-2! px-5! text-sm whitespace-nowrap"
@@ -93,8 +92,9 @@ const navItems = [
             </Button>
         </div>
 
-        <button class="md:hidden p-3 text-white ml-auto">
+        <button id="mobile-menu-btn" class="md:hidden p-3 text-white ml-auto relative" style="z-index: 1001;">
             <svg
+                id="menu-icon-hamburger"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -109,6 +109,153 @@ const navItems = [
                 <line x1="4" x2="20" y1="6" y2="6"></line>
                 <line x1="4" x2="20" y1="18" y2="18"></line>
             </svg>
+            <svg
+                id="menu-icon-close"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="hidden"
+            >
+                <line x1="18" x2="6" y1="6" y2="18"></line>
+                <line x1="6" x2="18" y1="6" y2="18"></line>
+            </svg>
         </button>
     </nav>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-black/70 backdrop-blur-2xl pt-24 px-6 hidden flex-col gap-8 transition-all duration-300" style="z-index: 1000;">
+        <button
+            id="mobile-menu-close"
+            class="absolute top-8 right-6 p-3 text-white hover:bg-white/10 rounded-full transition-colors"
+            onclick="closeMobileMenu()"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <line x1="18" x2="6" y1="6" y2="18"></line>
+                <line x1="6" x2="18" y1="6" y2="18"></line>
+            </svg>
+        </button>
+
+        <ul class="flex flex-col gap-6 text-center">
+            {
+                navItems.map((item, index) => (
+                    <li>
+                        {item.dropdown ? (
+                            <div class="flex flex-col gap-3">
+                                <button
+                                    data-dropdown-toggle={`mobile-dropdown-${index}`}
+                                    class="text-2xl font-display font-medium text-gray-300 hover:text-white transition-colors flex items-center justify-center gap-2"
+                                >
+                                    {item.name}
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="20"
+                                        height="20"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="dropdown-icon transition-transform"
+                                    >
+                                        <polyline points="6 9 12 15 18 9" />
+                                    </svg>
+                                </button>
+                                <div id={`mobile-dropdown-${index}`} class="hidden flex-col gap-2 mt-2">
+                                    {item.dropdown.map((subItem) => (
+                                        <a
+                                            href={subItem.href}
+                                            class="text-lg text-gray-400 hover:text-white transition-colors py-2"
+                                            onclick="closeMobileMenu()"
+                                        >
+                                            {subItem.name}
+                                        </a>
+                                    ))}
+                                </div>
+                            </div>
+                        ) : (
+                            <a
+                                href={item.href}
+                                class="text-2xl font-display font-medium text-gray-300 hover:text-white transition-colors"
+                                onclick="closeMobileMenu()"
+                            >
+                                {item.name}
+                            </a>
+                        )}
+                    </li>
+                ))
+            }
+        </ul>
+        <div class="flex justify-center">
+             <Button
+                href={getWhatsAppLink(whatsappMessages.contato)}
+                target="_blank"
+                variant="primary"
+                class="w-full py-4 text-lg"
+            >
+                Falar no WhatsApp
+            </Button>
+        </div>
+    </div>
 </header>
+
+<script>
+    const btn = document.getElementById('mobile-menu-btn')
+    const menu = document.getElementById('mobile-menu')
+    const hamburgerIcon = document.getElementById('menu-icon-hamburger')
+    const closeIcon = document.getElementById('menu-icon-close')
+
+    function closeMobileMenu() {
+        menu?.classList.add('hidden')
+        menu?.classList.remove('flex')
+        hamburgerIcon?.classList.remove('hidden')
+        closeIcon?.classList.add('hidden')
+        document.body.style.overflow = ''
+    }
+
+    (window as any).closeMobileMenu = closeMobileMenu
+
+    btn?.addEventListener('click', () => {
+        menu?.classList.toggle('hidden')
+        menu?.classList.toggle('flex')
+
+        hamburgerIcon?.classList.toggle('hidden')
+        closeIcon?.classList.toggle('hidden')
+
+        if (menu?.classList.contains('hidden')) {
+            document.body.style.overflow = ''
+        } else {
+            document.body.style.overflow = 'hidden'
+        }
+    })
+
+    const dropdownToggles = document.querySelectorAll('[data-dropdown-toggle]')
+    dropdownToggles.forEach((toggle) => {
+        toggle.addEventListener('click', () => {
+            const targetId = toggle.getAttribute('data-dropdown-toggle')
+            const dropdown = document.getElementById(targetId)
+            const icon = toggle.querySelector('.dropdown-icon')
+
+            if (dropdown) {
+                dropdown.classList.toggle('hidden')
+                dropdown.classList.toggle('flex')
+                icon?.classList.toggle('rotate-180')
+            }
+        })
+    })
+</script>

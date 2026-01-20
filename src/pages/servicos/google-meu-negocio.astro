@@ -1,16 +1,20 @@
 ---
 import Layout from "@/layouts/layout.astro";
 import Navbar from "@/components/common/navbar.astro";
-import FormFooter from "@/components/common/form-footer.astro";
+
 
 import GmnHero from "@/components/gmn/gmn-hero.astro";
 import GmnAudience from "@/components/gmn/gmn-audience.astro";
 import GmnOffer from "@/components/gmn/gmn-offer.astro";
 import GmnProcess from "@/components/gmn/gmn-process.astro";
 import GmnRequirements from "@/components/gmn/gmn-requirements.astro";
+import Footer from "@/components/common/footer.astro";
 ---
 
-<Layout>
+<Layout 
+    title="Otimização Google Meu Negócio | Ravi Media" 
+    description="Apareça no topo das buscas locais e receba mais ligações. Gestão e otimização completa de Perfil da Empresa no Google (GMN)."
+>
     <Navbar />
     <main>
         <GmnHero />
@@ -18,6 +22,7 @@ import GmnRequirements from "@/components/gmn/gmn-requirements.astro";
         <GmnOffer />
         <GmnProcess />
         <GmnRequirements />
+        <Footer />
     </main>
-    <FormFooter />
+
 </Layout>

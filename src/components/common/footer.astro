@@ -1,0 +1,115 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import { getWhatsAppLink, whatsappMessages } from "@/utils/whatsapp";
+
+const navItems = [
+    { name: "Home", href: "/" },
+    { name: "Serviços", href: "/#servicos" },
+    { name: "Como funciona", href: "/#como-funciona" },
+    { name: "Sobre", href: "/sobre-nos" },
+];
+
+const contactItems = [
+    { 
+        icon: "lucide:phone", 
+        text: "WhatsApp", 
+        href: getWhatsAppLink(whatsappMessages.contato) 
+    },
+    { 
+        icon: "lucide:mail", 
+        text: "contato@ravimedia.com.br", 
+        href: "mailto:contato@ravimedia.com.br" 
+    },
+    { 
+        icon: "simple-icons:instagram", 
+        text: "@ravimedia", 
+        href: "https://instagram.com/ravimedia" 
+    },
+];
+---
+
+<footer class="bg-black border-t border-white/10 pt-20 pb-10">
+    <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-3 gap-12 mb-16">
+            <!-- Col 1: Logo -->
+            <div class="flex flex-col items-center md:items-start md:col-span-1">
+                <a href="/" class="flex flex-col gap-4">
+                    <Image src="/favicon.svg" alt="Ravi Media Logo" width={48} height={48} />
+                    <Image src="/ravi-media-text.svg" alt="Ravi Media" width={150} height={24} />
+                </a>
+            </div>
+
+            <!-- Col 2: Navigation -->
+            <div class="flex flex-col items-center md:items-start gap-4">
+                <h3 class="text-white font-bold mb-2">Navegação</h3>
+                <nav class="flex flex-col gap-3 items-center md:items-start text-sm text-gray-400">
+                    {navItems.map(item => (
+                        <a href={item.href} class="hover:text-white transition-colors">
+                            {item.name}
+                        </a>
+                    ))}
+                </nav>
+            </div>
+
+            <!-- Col 3: Contact -->
+            <div class="flex flex-col items-center md:items-start gap-4">
+                <h3 class="text-white font-bold mb-2">Contato</h3>
+                <div class="flex flex-col gap-3 items-center md:items-start text-sm text-gray-400">
+                    {contactItems.map(item => (
+                        <a href={item.href} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-white transition-colors">
+                            <Icon name={item.icon} class="w-4 h-4" />
+                            <span>{item.text}</span>
+                        </a>
+                    ))}
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-gray-500">
+            <div class="flex flex-col items-center md:items-start gap-1">
+                <p>&copy; {new Date().getFullYear()} Ravi Media. Todos os direitos reservados.</p>
+                <p>CNPJ: 52.713.034/0001-27</p>
+            </div>
+
+            <!-- Powered By Section -->
+            <div class="flex items-center gap-3">
+                <span>Feito por</span>
+                <div class="flex items-center -space-x-2">
+                    <a href="https://rafhael.com.br?utm_source=ravi-media&utm_campain=footer" target="_blank" rel="noopener noreferrer" class="relative z-20 hover:z-30 h-8 w-8 rounded-full overflow-hidden transition-transform hover:scale-110">
+                        <Image 
+                            src="/rafhael-flogo.svg" 
+                            alt="Rafhael Marsigli" 
+                            width={32} 
+                            height={32} 
+                            class="shadow-md w-full h-full object-over"
+                        />
+                    </a>
+                    <a href="https://ravimedia.com.br?utm_source=ravi-media&utm_campain=footer" target="_blank" rel="noopener noreferrer" class="relative z-10 hover:z-30 h-8 w-8 rounded-full overflow-hidden transition-transform hover:scale-110">
+                        <Image 
+                            src="/ravi-media-flogo.svg" 
+                            alt="Ravi Media" 
+                            width={32} 
+                            height={32}
+                            class="shadow-md w-full h-full object-cover"
+                        />
+                    </a>
+                </div>
+                <div class="w-px h-4 bg-white/10 mx-1"></div>
+                <div class="flex items-center gap-2">
+                    <span>Powered by</span>
+                    <a href="https://rushcms.com?utm_source=ravi-media&utm_campain=footer" target="_blank" rel="noopener noreferrer" class="relative z-10 hover:z-30 h-8 w-8 transition-transform hover:scale-110">
+                         <Image 
+                            src="/rush-cms-flogo.svg" 
+                            alt="Rush CMS" 
+                            width={24} 
+                            height={24}
+                            class="shadow-md w-full h-full object-cover"
+                        />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

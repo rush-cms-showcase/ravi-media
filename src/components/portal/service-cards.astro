@@ -1,5 +1,6 @@
 ---
-import Button from "@/components/ui/button.astro";
+import Button from "@/components/ui/button.astro"
+import { Icon } from "astro-icon/components"
 ---
 
 <section id="servicos" class="py-24 bg-surface relative">
@@ -15,14 +16,13 @@ import Button from "@/components/ui/button.astro";
         </div>
 
         <div class="grid lg:grid-cols-3 gap-8">
-            <!-- Card 1: Landing Pages -->
             <div
                 class="bg-black border border-white/10 rounded-2xl p-8 hover:border-primary/50 hover:-translate-y-1 transition-all duration-300 group flex flex-col h-full"
             >
                 <div
-                    class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-white text-2xl mb-6 group-hover:bg-primary group-hover:text-black transition-colors"
+                    class="w-14 h-14 bg-white/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors"
                 >
-                    🚀
+                    <Icon name="lucide:rocket" class="w-7 h-7 text-primary" />
                 </div>
                 <h3 class="text-xl font-bold text-white mb-2">
                     Landing Pages / Sites
@@ -32,26 +32,27 @@ import Button from "@/components/ui/button.astro";
                 </p>
 
                 <div class="space-y-4 mb-8 flex-1">
-                    <div
-                        class="p-4 bg-surface rounded-lg border border-white/5"
-                    >
-                        <p class="text-gray-300 text-sm italic">
-                            "Preciso de uma página que gere mensagens no
-                            WhatsApp."
+                    <blockquote class="pl-4 border-l-2 border-primary/30">
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            "Preciso de uma página que gere mensagens no WhatsApp."
                         </p>
-                    </div>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li class="flex items-center gap-2">
-                            <span class="text-primary">✓</span> Landing page com CTA
+                    </blockquote>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li class="flex items-center gap-3">
+                            <Icon name="lucide:check" class="w-4 h-4 text-primary shrink-0" />
+                            <span>Landing page com CTA</span>
                         </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-primary">✓</span> Integração WhatsApp
+                        <li class="flex items-center gap-3">
+                            <Icon name="lucide:check" class="w-4 h-4 text-primary shrink-0" />
+                            <span>Integração WhatsApp</span>
                         </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-primary">✓</span> 5 a 7 dias úteis
+                        <li class="flex items-center gap-3">
+                            <Icon name="lucide:check" class="w-4 h-4 text-primary shrink-0" />
+                            <span>5 a 7 dias úteis</span>
                         </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-primary">✓</span> R$ 800 a R$ 1.500
+                        <li class="flex items-center gap-3">
+                            <Icon name="lucide:check" class="w-4 h-4 text-primary shrink-0" />
+                            <span>R$ 800 a R$ 1.500</span>
                         </li>
                     </ul>
                 </div>
@@ -65,19 +66,13 @@ import Button from "@/components/ui/button.astro";
                 </Button>
             </div>
 
-            <!-- Card 2: GMN Turbo -->
             <div
-                class="bg-black border border-white/10 rounded-2xl p-8 hover:border-blue-500/50 hover:-translate-y-1 transition-all duration-300 group flex flex-col h-full relative overflow-hidden"
+                class="bg-black border border-white/10 rounded-2xl p-8 hover:border-blue-500/50 hover:-translate-y-1 transition-all duration-300 group flex flex-col h-full"
             >
                 <div
-                    class="absolute top-0 right-0 bg-blue-500/10 px-3 py-1 text-xs text-blue-400 font-bold rounded-bl-xl border-l border-b border-blue-500/20"
+                    class="w-14 h-14 bg-white/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors"
                 >
-                    Caixa Rápido
-                </div>
-                <div
-                    class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-white text-2xl mb-6 group-hover:bg-blue-500 group-hover:text-white transition-colors"
-                >
-                    📍
+                    <Icon name="lucide:map-pin" class="w-7 h-7 text-blue-500" />
                 </div>
                 <h3 class="text-xl font-bold text-white mb-2">
                     Google Meu Negócio
@@ -87,27 +82,27 @@ import Button from "@/components/ui/button.astro";
                 </p>
 
                 <div class="space-y-4 mb-8 flex-1">
-                    <div
-                        class="p-4 bg-surface rounded-lg border border-white/5"
-                    >
-                        <p class="text-gray-300 text-sm italic">
-                            "Dependo de busca local e quero aparecer melhor no
-                            Google."
+                    <blockquote class="pl-4 border-l-2 border-blue-500/30">
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            "Dependo de busca local e quero aparecer melhor no Google."
                         </p>
-                    </div>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li class="flex items-center gap-2">
-                            <span class="text-blue-500">✓</span> Otimização de Perfil
-                            de Empresa
+                    </blockquote>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li class="flex items-center gap-3">
+                            <Icon name="lucide:check" class="w-4 h-4 text-blue-500 shrink-0" />
+                            <span>Otimização de Perfil de Empresa</span>
                         </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-blue-500">✓</span> SEO Local
+                        <li class="flex items-center gap-3">
+                            <Icon name="lucide:check" class="w-4 h-4 text-blue-500 shrink-0" />
+                            <span>SEO Local</span>
                         </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-blue-500">✓</span> 3 a 5 dias
+                        <li class="flex items-center gap-3">
+                            <Icon name="lucide:check" class="w-4 h-4 text-blue-500 shrink-0" />
+                            <span>3 a 5 dias</span>
                         </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-blue-500">✓</span> Sob consulta
+                        <li class="flex items-center gap-3">
+                            <Icon name="lucide:check" class="w-4 h-4 text-blue-500 shrink-0" />
+                            <span>Sob consulta</span>
                         </li>
                     </ul>
                 </div>
@@ -121,14 +116,13 @@ import Button from "@/components/ui/button.astro";
                 </Button>
             </div>
 
-            <!-- Card 3: Resgate -->
             <div
-                class="bg-black border border-white/10 rounded-2xl p-8 hover:border-red-500/50 hover:-translate-y-1 transition-all duration-300 group flex flex-col h-full"
+                class="bg-black border border-white/10 rounded-2xl p-8 hover:border-amber-500/50 hover:-translate-y-1 transition-all duration-300 group flex flex-col h-full"
             >
                 <div
-                    class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-white text-2xl mb-6 group-hover:bg-red-500 group-hover:text-white transition-colors"
+                    class="w-14 h-14 bg-white/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-500/20 transition-colors"
                 >
-                    🚑
+                    <Icon name="lucide:wrench" class="w-7 h-7 text-amber-500" />
                 </div>
                 <h3 class="text-xl font-bold text-white mb-2">
                     Resgate de Site
@@ -138,25 +132,27 @@ import Button from "@/components/ui/button.astro";
                 </p>
 
                 <div class="space-y-4 mb-8 flex-1">
-                    <div
-                        class="p-4 bg-surface rounded-lg border border-white/5"
-                    >
-                        <p class="text-gray-300 text-sm italic">
+                    <blockquote class="pl-4 border-l-2 border-amber-500/30">
+                        <p class="text-gray-400 text-sm leading-relaxed">
                             "Meu site é lento, instável ou não ajuda a vender."
                         </p>
-                    </div>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li class="flex items-center gap-2">
-                            <span class="text-red-500">✓</span> Diagnóstico Técnico
+                    </blockquote>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li class="flex items-center gap-3">
+                            <Icon name="lucide:check" class="w-4 h-4 text-amber-500 shrink-0" />
+                            <span>Diagnóstico Técnico</span>
                         </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-red-500">✓</span> Correções (Cloudflare/Cache)
+                        <li class="flex items-center gap-3">
+                            <Icon name="lucide:check" class="w-4 h-4 text-amber-500 shrink-0" />
+                            <span>Correções (Cloudflare/Cache)</span>
                         </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-red-500">✓</span> Ou rebuild estático
+                        <li class="flex items-center gap-3">
+                            <Icon name="lucide:check" class="w-4 h-4 text-amber-500 shrink-0" />
+                            <span>Ou rebuild estático</span>
                         </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-red-500">✓</span> A partir de R$ 400
+                        <li class="flex items-center gap-3">
+                            <Icon name="lucide:check" class="w-4 h-4 text-amber-500 shrink-0" />
+                            <span>A partir de R$ 400</span>
                         </li>
                     </ul>
                 </div>

@@ -1,5 +1,11 @@
 ---
-import Button from "@/components/ui/button.astro";
+import Button from "@/components/ui/button.astro"
+import { Icon } from "astro-icon/components"
+import { getWhatsAppLink, whatsappMessages } from "@/utils/whatsapp"
+
+const whatsappDiagnostico = getWhatsAppLink(whatsappMessages.diagnostico)
+const whatsappContato = getWhatsAppLink(whatsappMessages.contato)
+const whatsappAcompanhamento = getWhatsAppLink("Olá! Quero saber sobre acompanhamento mensal.")
 ---
 
 <section id="upsell" class="py-20 bg-surface border-y border-white/5">
@@ -13,7 +19,9 @@ import Button from "@/components/ui/button.astro";
             a geração de contatos ativa.
         </p>
         <a
-            href="#whatsapp"
+            href={whatsappAcompanhamento}
+            target="_blank"
+            rel="noopener noreferrer"
             class="text-primary hover:text-white underline underline-offset-4 transition-colors"
         >
             Quero saber sobre acompanhamento mensal
@@ -58,21 +66,7 @@ import Button from "@/components/ui/button.astro";
                     <details class="group bg-surface border border-white/5 rounded-xl overflow-hidden cursor-pointer transition-colors hover:border-white/10">
                         <summary class="flex items-center justify-between p-6 font-medium text-white list-none">
                             <span>{item.q}</span>
-                            <span class="text-primary transition-transform group-open:rotate-180">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                >
-                                    <polyline points="6 9 12 15 18 9" />
-                                </svg>
-                            </span>
+                            <Icon name="lucide:chevron-down" class="w-5 h-5 text-primary transition-transform group-open:rotate-180" />
                         </summary>
                         <div class="px-6 pb-6 text-gray-400 border-t border-white/5 pt-4">
                             <p>{item.a}</p>
@@ -88,7 +82,6 @@ import Button from "@/components/ui/button.astro";
     id="cta-final"
     class="py-24 bg-surface text-center relative overflow-hidden"
 >
-    <!-- Background glow -->
     <div class="absolute inset-0 bg-primary/5 blur-3xl pointer-events-none">
     </div>
 
@@ -102,14 +95,14 @@ import Button from "@/components/ui/button.astro";
             class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"
         >
             <Button
-                href="#diagnostico"
+                href={whatsappDiagnostico}
                 variant="primary"
                 class="w-full sm:w-auto text-lg px-8 py-4"
             >
                 Pedir diagnóstico rápido
             </Button>
             <Button
-                href="#whatsapp"
+                href={whatsappContato}
                 variant="secondary"
                 class="w-full sm:w-auto text-lg px-8 py-4"
             >

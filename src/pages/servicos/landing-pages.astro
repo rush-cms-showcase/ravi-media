@@ -7,10 +7,14 @@ import OfferProcess from "@/components/landing/offer-process.astro";
 import DeliveryAudience from "@/components/landing/delivery-audience.astro";
 import PricingAuthority from "@/components/landing/pricing-authority.astro";
 import UpsellFaqCta from "@/components/landing/upsell-faq-cta.astro";
-import FormFooter from "@/components/common/form-footer.astro";
+import Footer from "@/components/common/footer.astro";
+
 ---
 
-<Layout>
+<Layout 
+    title="Landing Pages de Alta Conversão | Ravi Media" 
+    description="Criação de landing pages focadas em vendas e conversão no WhatsApp. Design premium, carregamento rápido e copy estratégica."
+>
 	<Navbar />
 	<main>
 		<Hero />
@@ -19,6 +23,6 @@ import FormFooter from "@/components/common/form-footer.astro";
 		<DeliveryAudience />
 		<PricingAuthority />
 		<UpsellFaqCta />
-		<FormFooter />
+        <Footer />
 	</main>
 </Layout>

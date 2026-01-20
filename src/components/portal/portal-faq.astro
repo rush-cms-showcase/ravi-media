@@ -1,5 +1,5 @@
 ---
-
+import { Icon } from "astro-icon/components"
 ---
 
 <section id="faq" class="py-20 bg-surface">
@@ -28,9 +28,7 @@
                     <details class="group bg-black border border-white/5 rounded-lg overflow-hidden cursor-pointer">
                         <summary class="flex items-center justify-between p-4 font-medium text-gray-300 group-open:text-white group-open:bg-white/5 transition-colors list-none">
                             {item.q}
-                            <span class="text-gray-500 group-open:rotate-180 transition-transform">
-                                ▼
-                            </span>
+                            <Icon name="lucide:chevron-down" class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" />
                         </summary>
                         <div class="p-4 text-sm text-gray-400 border-t border-white/5 bg-black/50">
                             {item.a}

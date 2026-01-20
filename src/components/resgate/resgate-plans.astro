@@ -1,177 +1,114 @@
 ---
 import Button from "@/components/ui/button.astro";
+import { Icon } from "astro-icon/components";
+import { getWhatsAppLink } from "@/utils/whatsapp";
+
+const whatsappLite = getWhatsAppLink("Olá! Quero saber sobre o Resgate Lite.")
+const whatsappStandard = getWhatsAppLink("Olá! Preciso de um diagnóstico para o Resgate Standard.")
+const whatsappRebuild = getWhatsAppLink("Olá! Meu site não tem jeito, quero falar sobre Rebuild.")
 ---
 
-<section class="py-24 bg-surface relative">
+<section id="planos" class="py-24 bg-black border-t border-white/5">
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
             <h2 class="text-3xl lg:text-4xl font-bold mb-4">
-                Escolha seu plano
+                Opções de Resgate
             </h2>
             <p class="text-gray-400">
-                Opções claras baseadas na gravidade do problema.
+                Soluções baseadas na gravidade do problema técnico
             </p>
         </div>
 
-        <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-center">
-            <!-- Plano Lite -->
-            <div
-                class="bg-black/50 border border-white/5 rounded-2xl p-8 hover:border-white/10 transition-colors h-full flex flex-col"
-            >
+        <div class="grid lg:grid-cols-3 gap-8 max-w-5xl mx-auto items-start">
+            <!-- Lite -->
+            <div class="bg-surface border border-white/10 rounded-2xl p-8 hover:border-red-500/30 transition-colors">
                 <div class="mb-6">
                     <h3 class="text-xl font-bold text-white">Resgate Lite</h3>
-                    <p class="text-sm text-gray-500 font-mono mt-1">
-                        "Apenas consertar"
-                    </p>
+                    <p class="text-sm text-gray-500 font-mono mt-1">Correções visuais</p>
                 </div>
                 <div class="text-3xl font-bold text-white mb-6">
-                    R$ 400 <span class="text-sm font-normal text-gray-500"
-                        >/ único</span
-                    >
+                    R$ 400 <span class="text-sm font-normal text-gray-500">/ único</span>
                 </div>
-                <ul class="space-y-4 mb-8 flex-1">
+                <ul class="space-y-4 mb-8">
                     <li class="flex items-start gap-3 text-sm text-gray-400">
-                        <span class="text-white">✓</span> Diagnóstico básico
+                        <Icon name="lucide:check" class="w-4 h-4 text-green-500 mt-0.5" />
+                        <span>Bugs de layout (CSS)</span>
                     </li>
                     <li class="flex items-start gap-3 text-sm text-gray-400">
-                        <span class="text-white">✓</span> Correção de bugs visuais
+                        <Icon name="lucide:check" class="w-4 h-4 text-green-500 mt-0.5" />
+                        <span>Ajustes de texto/foto</span>
                     </li>
                     <li class="flex items-start gap-3 text-sm text-gray-400">
-                        <span class="text-white">✓</span> Configuração básica de Cache
-                    </li>
-                    <li class="flex items-start gap-3 text-sm text-gray-400">
-                        <span class="text-white">✓</span> Otimização de imagens
+                        <Icon name="lucide:check" class="w-4 h-4 text-green-500 mt-0.5" />
+                        <span>Otimização básica de imagens</span>
                     </li>
                 </ul>
-                <div
-                    class="p-4 bg-white/5 rounded-lg border border-white/5 mb-8"
-                >
-                    <p class="text-xs text-gray-500">
-                        Ideal para sites pequenos que precisam apenas de ajustes
-                        pontuais.
-                    </p>
-                </div>
-                <Button
-                    href="https://wa.me/5500000000000?text=Quero%20Resgate%20Lite"
-                    target="_blank"
-                    variant="secondary"
-                    class="w-full text-sm"
-                >
+                <Button href={whatsappLite} variant="secondary" class="w-full">
                     Quero o Lite
                 </Button>
             </div>
 
-            <!-- Plano Standard -->
-            <div
-                class="bg-black border border-red-500/50 rounded-2xl p-8 relative shadow-[0_0_50px_-12px_rgba(239,68,68,0.2)] transform lg:-translate-y-4 h-full flex flex-col"
-            >
-                <div
-                    class="absolute top-0 center transform -translate-y-1/2 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider"
-                >
+            <!-- Standard -->
+            <div class="bg-surface border border-red-500 rounded-2xl p-8 relative shadow-2xl shadow-red-500/10 scale-105 z-10">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-red-600 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">
                     Recomendado
                 </div>
-                <div class="flex justify-between items-start mb-6">
-                    <div>
-                        <h3 class="text-xl font-bold text-white">
-                            Resgate Standard
-                        </h3>
-                        <p class="text-sm text-gray-500 font-mono mt-1">
-                            "Destravar potencial"
-                        </p>
-                    </div>
-                    <div
-                        class="bg-red-500/10 border border-red-500/20 text-xs px-2 py-1 rounded text-red-400"
-                    >
-                        A partir R$ 900
-                    </div>
+                <div class="mb-6">
+                    <h3 class="text-xl font-bold text-white">Resgate Standard</h3>
+                    <p class="text-sm text-red-200 font-mono mt-1">Performance & SEO</p>
                 </div>
                 <div class="text-3xl font-bold text-white mb-6">
-                    Sob Consulta
+                    <span class="text-sm font-normal text-gray-400 block mb-1">A partir de</span>
+                    R$ 900
                 </div>
-                <ul class="space-y-4 mb-8 flex-1">
-                    <li class="flex items-start gap-3 text-sm text-gray-300">
-                        <span class="text-red-500">✓</span> Diagnóstico Completo (Core
-                        Web Vitals)
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-start gap-3 text-sm text-white">
+                        <Icon name="lucide:check" class="w-4 h-4 text-red-500 mt-0.5" />
+                        <span>Diagnóstico Core Web Vitals</span>
                     </li>
-                    <li class="flex items-start gap-3 text-sm text-gray-300">
-                        <span class="text-red-500">✓</span> Otimização Avançada (Cloudflare
-                        + Cache)
+                    <li class="flex items-start gap-3 text-sm text-white">
+                        <Icon name="lucide:check" class="w-4 h-4 text-red-500 mt-0.5" />
+                        <span>Configuração de Cache/CDN</span>
                     </li>
-                    <li class="flex items-start gap-3 text-sm text-gray-300">
-                        <span class="text-red-500">✓</span> Revisão de SEO Técnico
-                        (Tags, Sitemap)
+                    <li class="flex items-start gap-3 text-sm text-white">
+                        <Icon name="lucide:check" class="w-4 h-4 text-red-500 mt-0.5" />
+                        <span>SEO Técnico e Sitemap</span>
                     </li>
-                    <li class="flex items-start gap-3 text-sm text-gray-300">
-                        <span class="text-red-500">✓</span> Integração correta com
-                        WhatsApp
-                    </li>
-                    <li class="flex items-start gap-3 text-sm text-gray-300">
-                        <span class="text-red-500">✓</span> Rebuild parcial se necessário
+                    <li class="flex items-start gap-3 text-sm text-white">
+                        <Icon name="lucide:check" class="w-4 h-4 text-red-500 mt-0.5" />
+                        <span>Limpeza de banco de dados</span>
                     </li>
                 </ul>
-                <div
-                    class="p-4 bg-red-500/10 rounded-lg border border-red-500/20 mb-8"
-                >
-                    <p class="text-xs text-red-200">
-                        Para quem depende do site para vender e não pode perder
-                        leads por lentidão.
-                    </p>
-                </div>
-                <Button
-                    href="https://wa.me/5500000000000?text=Quero%20Resgate%20Standard"
-                    target="_blank"
-                    variant="primary"
-                    class="w-full bg-red-600! text-white! hover:bg-red-500!"
-                >
-                    Avaliar meu Site
+                <Button href={whatsappStandard} variant="primary" class="w-full bg-red-600! hover:bg-red-500!">
+                    Solicitar Diagnóstico
                 </Button>
             </div>
 
-            <!-- Plano Rebuild -->
-            <div
-                class="bg-black/50 border border-white/5 rounded-2xl p-8 hover:border-white/10 transition-colors h-full flex flex-col"
-            >
+            <!-- Rebuild -->
+            <div class="bg-surface border border-white/10 rounded-2xl p-8 hover:border-red-500/30 transition-colors">
                 <div class="mb-6">
-                    <h3 class="text-xl font-bold text-white">Rebuild Total</h3>
-                    <p class="text-sm text-gray-500 font-mono mt-1">
-                        "Começar do jeito certo"
-                    </p>
+                    <h3 class="text-xl font-bold text-white">Rebuild</h3>
+                    <p class="text-sm text-gray-500 font-mono mt-1">Refazer do zero</p>
                 </div>
                 <div class="text-3xl font-bold text-white mb-6">
-                    R$ 1.500 <span class="text-sm font-normal text-gray-500"
-                        >/ base</span
-                    >
+                    <span class="text-sm font-normal text-gray-400 block mb-1">Base</span>
+                    R$ 1.500
                 </div>
-                <ul class="space-y-4 mb-8 flex-1">
+                <ul class="space-y-4 mb-8">
                     <li class="flex items-start gap-3 text-sm text-gray-400">
-                        <span class="text-white">✓</span> Migração para tecnologia
-                        moderna (Astro/Next)
+                        <Icon name="lucide:check" class="w-4 h-4 text-green-500 mt-0.5" />
+                        <span>Nova tecnologia (Astro)</span>
                     </li>
                     <li class="flex items-start gap-3 text-sm text-gray-400">
-                        <span class="text-white">✓</span> Design focado em conversão
+                        <Icon name="lucide:check" class="w-4 h-4 text-green-500 mt-0.5" />
+                        <span>Design moderno</span>
                     </li>
                     <li class="flex items-start gap-3 text-sm text-gray-400">
-                        <span class="text-white">✓</span> Hospedagem de alta performance
-                        inclusa
-                    </li>
-                    <li class="flex items-start gap-3 text-sm text-gray-400">
-                        <span class="text-white">✓</span> Todo o pacote Standard incluso
+                        <Icon name="lucide:check" class="w-4 h-4 text-green-500 mt-0.5" />
+                        <span>Hospedagem inclusa</span>
                     </li>
                 </ul>
-                <div
-                    class="p-4 bg-white/5 rounded-lg border border-white/5 mb-8"
-                >
-                    <p class="text-xs text-gray-500">
-                        Quando o site atual é inviável de consertar e é melhor
-                        refazer.
-                    </p>
-                </div>
-                <Button
-                    href="https://wa.me/5500000000000?text=Quero%20Rebuild"
-                    target="_blank"
-                    variant="secondary"
-                    class="w-full text-sm"
-                >
+                <Button href={whatsappRebuild} variant="secondary" class="w-full">
                     Falar sobre Rebuild
                 </Button>
             </div>

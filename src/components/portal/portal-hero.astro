@@ -1,123 +1,101 @@
 ---
-import Button from "@/components/ui/button.astro";
+import Button from "@/components/ui/button.astro"
+import { Icon } from "astro-icon/components"
+import { getWhatsAppLink, whatsappMessages } from "@/utils/whatsapp"
+import DashboardSimulator from "@/components/portal/dashboard-simulator"
+
+const whatsappDiagnostico = getWhatsAppLink(whatsappMessages.diagnostico)
 ---
 
 <section
-    class="relative
-min-h-[600px] flex items-center pt-32 pb-20 overflow-hidden"
+    class="relative min-h-[600px] flex items-center pt-32 pb-20 overflow-hidden"
 >
-    <!-- Background
-Glow -->
     <div
-        class="absolute top-0 center w-full h-[600px] bg-primary/10
-blur-[150px] pointer-events-none opacity-40"
+        class="absolute top-0 center w-full h-[600px] bg-primary/10 blur-[150px] pointer-events-none opacity-40"
     >
     </div>
-    <div class="container
-mx-auto px-4 relative z-10 text-center">
-        <div class="max-w-4xl mx-auto
-space-y-8">
-            <div
-                class="inline-flex items-center gap-2 px-3 py-1 rounded-full
-bg-white/5 border border-white/10 text-xs font-mono text-primary/80 mb-4"
-            >
-                <span class="relative flex h-2 w-2">
-                    <span
-                        class="animate-ping absolute
-inline-flex h-full w-full rounded-full bg-primary opacity-75"
-                    ></span>
-                    <span
-                        class="relative inline-flex rounded-full h-2 w-2 bg-primary"
-                    ></span>
-                </span>
-                Infraestrutura Digital
-            </div>
-            <h1
-                class="text-4xl lg:text-7xl font-display
-font-bold leading-tight tracking-tight"
-            >
-                Infraestrutura digital para gerar mais
-                <span class="bg-primary/10 px-2 rounded-lg text-primary"
-                    >contatos</span
-                > — sem enrolação.
-            </h1>
-            <p
-                class="text-xl lg:text-2xl text-gray-400 max-w-2xl mx-auto
-leading-relaxed"
-            >
-                Sites, presença local no Google e performance técnica para
-                negócios de serviços que precisam de previsibilidade.
-            </p>
-            <div
-                class="flex
-flex-col sm:flex-row items-center justify-center gap-4 pt-4"
-            >
-                <Button
-                    href="#diagnostico"
-                    variant="primary"
-                    class="w-full sm:w-auto text-lg px-8 py-4"
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8 text-center lg:text-left">
+                <h1
+                    class="text-4xl lg:text-6xl font-display font-bold leading-tight tracking-tight"
                 >
-                    Pedir diagnóstico rápido
-                </Button>
-                <Button
-                    href="#servicos"
-                    variant="secondary"
-                    class="w-full sm:w-auto text-lg px-8 py-4"
+                    Infraestrutura digital para gerar mais
+                    <span class="bg-primary/10 px-2 rounded-lg text-primary"
+                        >contatos</span
+                    > — sem enrolação.
+                </h1>
+                <p
+                    class="text-xl lg:text-2xl text-gray-400 max-w-xl leading-relaxed"
                 >
-                    Ver serviços
-                </Button>
-            </div>
-            <div
-                class="flex items-center justify-center gap-4 text-xs
-lg:text-sm text-gray-500 pt-8 border-t border-white/5 mt-8 max-w-lg mx-auto"
-            >
-                <div class="flex items-center gap-2">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="text-primary"
-                        ><polyline points="20 6 9 17 4 12"></polyline></svg
+                    Sites, presença local no Google e performance técnica para
+                    negócios de serviços que precisam de previsibilidade.
+                </p>
+                <div
+                    class="flex flex-col sm:flex-row items-center lg:items-start gap-4 pt-4"
+                >
+                    <Button
+                        href={whatsappDiagnostico}
+                        variant="primary"
+                        class="w-full sm:w-auto text-lg px-8 py-4"
                     >
-                    Processo claro
+                        Pedir diagnóstico rápido
+                    </Button>
+                    <Button
+                        href="#servicos"
+                        variant="secondary"
+                        class="w-full sm:w-auto text-lg px-8 py-4"
+                    >
+                        Ver serviços
+                    </Button>
                 </div>
-                <div class="flex items-center gap-2">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="text-primary"
-                        ><polyline points="20 6 9 17 4
-12"></polyline></svg
-                    > Escopo fechado
+                <div
+                    class="flex items-center justify-center lg:justify-start gap-4 text-xs lg:text-sm text-gray-500 pt-8 border-t border-white/5 mt-8 max-w-lg"
+                >
+                    <div class="flex items-center gap-2">
+                        <Icon name="lucide:check" class="w-4 h-4 text-primary" />
+                        Processo claro
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <Icon name="lucide:check" class="w-4 h-4 text-primary" />
+                        Escopo fechado
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <Icon name="lucide:check" class="w-4 h-4 text-primary" />
+                        Performance real
+                    </div>
                 </div>
-                <div class="flex items-center
-gap-2">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="text-primary"
-                        ><polyline points="20 6 9 17 4 12"></polyline></svg
-                    > Performance real
+            </div>
+
+            <div class="hidden lg:block relative perspective-[2000px]">
+                <div class="w-full aspect-4/3 rounded-2xl transform rotate-y-[-5deg] rotate-x-[5deg] hover:rotate-0 transition-transform duration-700 shadow-2xl">
+                    <DashboardSimulator client:only="react">
+                        <div slot="fallback" class="w-full h-full bg-zinc-900 rounded-2xl border border-white/10 flex items-center justify-center p-8">
+                             <div class="flex flex-col items-center gap-4 opacity-50">
+                                 <div class="w-12 h-12 rounded-full border-4 border-zinc-700 border-t-zinc-400 animate-spin" />
+                                 <span class="text-zinc-500 text-sm font-mono">INICIALIZANDO DASHBOARD...</span>
+                             </div>
+                        </div>
+                    </DashboardSimulator>
+                </div>
+                 
+                  {/* Floating Badge - similar to other heros */}
+                <div
+                    class="absolute -bottom-8 -left-8 bg-zinc-900/80 backdrop-blur-xl border border-white/10 p-4 rounded-xl shadow-2xl flex items-center gap-4 animate-float"
+                >
+                    <div
+                        class="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center text-green-500"
+                    >
+                         <Icon name="lucide:trending-up" class="w-5 h-5" />
+                    </div>
+                    <div>
+                        <div class="text-xs text-gray-400">
+                            Crescimento
+                        </div>
+                        <div class="font-bold text-white">
+                            +127% este mês
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

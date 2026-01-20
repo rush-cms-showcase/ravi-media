@@ -1,0 +1,57 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div class="w-full h-full relative overflow-hidden rounded-2xl bg-zinc-900 border border-white/5 flex items-center justify-center min-h-[300px]">
+  {/* Background Pattern */}
+  <div class="absolute inset-0 opacity-20 pointer-events-none">
+    <div class="absolute inset-0" style="background-image: radial-gradient(#333 1px, transparent 1px); background-size: 20px 20px;"></div>
+  </div>
+
+  {/* Profile Card Static */}
+  <div class="relative z-10 w-full max-w-[280px] bg-zinc-950/80 backdrop-blur-md border border-white/10 rounded-xl p-4 shadow-xl">
+    {/* Header Image */}
+    <div class="w-full h-24 bg-zinc-800 rounded-lg mb-4 relative overflow-hidden group">
+      <div class="absolute inset-0 flex items-center justify-center">
+        <Icon name="lucide:image" class="w-8 h-8 text-zinc-700" />
+      </div>
+    </div>
+
+    {/* Profile Info */}
+    <div class="space-y-3">
+        <div class="flex justify-between items-start">
+            <div class="w-2/3">
+                <div class="h-4 w-3/4 bg-zinc-800 rounded mb-2"></div>
+                <div class="h-3 w-1/2 bg-zinc-800/50 rounded"></div>
+            </div>
+            <div class="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center">
+                 <Icon name="lucide:check-circle-2" class="w-4 h-4 text-blue-500" />
+            </div>
+        </div>
+
+        {/* Rating Stars */}
+        <div class="flex gap-1">
+            {[1, 2, 3, 4, 5].map(() => (
+                <Icon name="lucide:star" class="w-3 h-3 text-yellow-500" />
+            ))}
+            <span class="text-xs text-zinc-500 ml-2">(48)</span>
+        </div>
+
+        {/* Action Buttons */}
+        <div class="grid grid-cols-2 gap-2 mt-4">
+             <div class="h-8 bg-blue-600/20 border border-blue-500/30 rounded-lg flex items-center justify-center">
+                 <span class="text-[10px] font-bold text-blue-400">Ligar</span>
+             </div>
+             <div class="h-8 bg-zinc-800 border border-white/5 rounded-lg flex items-center justify-center">
+                 <span class="text-[10px] font-bold text-zinc-400">Rota</span>
+             </div>
+        </div>
+    </div>
+  </div>
+
+  {/* Floating Scan Badge */}
+   <div class="absolute bottom-6 right-6 bg-blue-500/10 border border-blue-500/20 backdrop-blur-md px-4 py-2 rounded-lg flex items-center gap-2">
+    <Icon name="lucide:scan-eye" class="w-4 h-4 text-blue-500" />
+    <span class="text-xs font-mono text-blue-500 font-bold uppercase">Verificado</span>
+  </div>
+</div>

@@ -1,104 +1,102 @@
 ---
-
+import { Icon } from "astro-icon/components"
+import ProfileVisual from "./profile-visual.astro"
 ---
 
-<section class="py-24 bg-black border-y border-white/5">
+<section id="o-que-voce-recebe" class="py-24 bg-black relative">
     <div class="container mx-auto px-4">
-        <div class="text-center mb-16 max-w-2xl mx-auto">
-            <h2 class="text-3xl lg:text-4xl font-bold mb-4">
-                O que você recebe (Entrega Turbo)
-            </h2>
-            <p class="text-gray-400">
-                O pacote inclui uma otimização completa do perfil, com foco em
-                presença local e execução objetiva.
-            </p>
-        </div>
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
 
-        <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-            <div class="space-y-6">
-                <h3
-                    class="text-xl font-bold text-white mb-6 pl-4 border-l-4 border-blue-500"
-                >
-                    O que está incluso
-                </h3>
-                <div class="space-y-4">
-                    <div
-                        class="p-6 bg-surface rounded-2xl border border-white/10 hover:border-blue-500/30 transition-colors"
-                    >
-                        <h4 class="font-bold text-white mb-2">
-                            Otimização do Perfil
-                        </h4>
-                        <p class="text-sm text-gray-400">
-                            Estruturação completa de informações, categorias
-                            corretas e fotos.
-                        </p>
+                <span class="inline-block px-4 py-1 bg-blue-500/10 text-blue-400 text-sm font-mono rounded-full mb-4">
+                    Entrega completa
+                </span>
+                <h2 class="text-3xl lg:text-5xl font-bold mb-4">
+                    O que está incluído na otimização
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+                    Tudo que você precisa para aparecer melhor no Google e receber mais ligações
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-6 mb-16">
+                <div class="bg-linear-to-br from-surface to-black border border-white/10 p-8 rounded-2xl text-center group hover:border-blue-500/50 transition-all duration-300">
+                    <div class="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <Icon name="lucide:settings" class="w-8 h-8 text-blue-500" />
                     </div>
-                    <div
-                        class="p-6 bg-surface rounded-2xl border border-white/10 hover:border-blue-500/30 transition-colors"
-                    >
-                        <h4 class="font-bold text-white mb-2">SEO Local</h4>
-                        <p class="text-sm text-gray-400">
-                            Ajustes técnicos e de palavras-chave para ser
-                            encontrado na sua região.
-                        </p>
+                    <h4 class="text-lg font-bold text-white mb-3">Otimização do Perfil</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Informações completas, categorias corretas, horários, fotos profissionais e descrição otimizada
+                    </p>
+                </div>
+
+                <div class="bg-linear-to-br from-surface to-black border border-white/10 p-8 rounded-2xl text-center group hover:border-blue-500/50 transition-all duration-300">
+                    <div class="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <Icon name="lucide:search" class="w-8 h-8 text-blue-500" />
                     </div>
-                    <div
-                        class="p-6 bg-surface rounded-2xl border border-white/10 hover:border-blue-500/30 transition-colors"
-                    >
-                        <h4 class="font-bold text-white mb-2">
-                            Estratégia de Avaliações
-                        </h4>
-                        <p class="text-sm text-gray-400">
-                            Playbook de como pedir, quando pedir e como
-                            responder reviews.
-                        </p>
+                    <h4 class="text-lg font-bold text-white mb-3">SEO Local</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Palavras-chave estratégicas para sua região. Apareça quando o cliente pesquisar seu serviço
+                    </p>
+                </div>
+
+                <div class="bg-linear-to-br from-surface to-black border border-white/10 p-8 rounded-2xl text-center group hover:border-blue-500/50 transition-all duration-300">
+                    <div class="w-16 h-16 bg-yellow-500/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <Icon name="lucide:star" class="w-8 h-8 text-yellow-500" />
                     </div>
+                    <h4 class="text-lg font-bold text-white mb-3">Estratégia de Avaliações</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Playbook de como pedir, quando pedir e como responder reviews para construir reputação
+                    </p>
                 </div>
             </div>
 
-            <div class="space-y-6">
-                <h3
-                    class="text-xl font-bold text-white mb-6 pl-4 border-l-4 border-red-500"
-                >
-                    O que NÃO está incluso
-                </h3>
-                <div class="space-y-4">
-                    <div
-                        class="p-6 bg-black rounded-2xl border border-white/5 opacity-70"
-                    >
-                        <h4 class="font-bold text-gray-300 mb-2">
-                            Gestão diária de posts
-                        </h4>
-                        <p class="text-sm text-gray-500">
-                            Sem gestão recorrente de conteúdo no início (foco em
-                            infraestrutura).
-                        </p>
+            <div class="bg-linear-to-r from-zinc-900/50 via-surface to-zinc-900/50 border border-white/5 rounded-2xl p-8 lg:p-12">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 bg-green-500/10 rounded-xl flex items-center justify-center">
+                                <Icon name="lucide:package-check" class="w-5 h-5 text-green-500" />
+                            </div>
+                            <h3 class="text-2xl font-bold">O que você recebe</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4 p-4 bg-black/40 rounded-xl border border-white/5">
+                                <div class="w-8 h-8 bg-blue-500/10 rounded-lg flex items-center justify-center shrink-0">
+                                    <Icon name="lucide:check" class="w-4 h-4 text-blue-500" />
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-white mb-1">Perfil 100% otimizado</h5>
+                                    <p class="text-gray-500 text-sm">Pronto para rankear e converter</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 p-4 bg-black/40 rounded-xl border border-white/5">
+                                <div class="w-8 h-8 bg-blue-500/10 rounded-lg flex items-center justify-center shrink-0">
+                                    <Icon name="lucide:check" class="w-4 h-4 text-blue-500" />
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-white mb-1">Link direto para avaliações</h5>
+                                    <p class="text-gray-500 text-sm">Facilite para seus clientes deixarem review</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 p-4 bg-black/40 rounded-xl border border-white/5">
+                                <div class="w-8 h-8 bg-blue-500/10 rounded-lg flex items-center justify-center shrink-0">
+                                    <Icon name="lucide:check" class="w-4 h-4 text-blue-500" />
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-white mb-1">Orientação de manutenção</h5>
+                                    <p class="text-gray-500 text-sm">Como manter o perfil atualizado</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div
-                        class="p-6 bg-black rounded-2xl border border-white/5 opacity-70"
-                    >
-                        <h4 class="font-bold text-gray-300 mb-2">
-                            Promessa de Top #1
-                        </h4>
-                        <p class="text-sm text-gray-500">
-                            O Google é dinâmico. Garantimos as melhores práticas
-                            para subir no ranking.
-                        </p>
+                    <div class="relative">
+                        <div class="aspect-square bg-zinc-800/50 rounded-2xl border border-white/10 overflow-hidden">
+                            <ProfileVisual />
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Why it works -->
-        <div
-            class="mt-20 p-8 bg-blue-900/10 rounded-3xl border border-blue-500/20 text-center max-w-3xl mx-auto"
-        >
-            <h4 class="text-blue-400 font-bold mb-2">Por que isso funciona?</h4>
-            <p class="text-gray-300 text-sm leading-relaxed">
-                A presença local (Google Meu Negócio) é um canal valorizado. O
-                objetivo é caixa rápido e demonstração de valor, abrindo porta
-                para projetos maiores.
-            </p>
         </div>
     </div>
 </section>

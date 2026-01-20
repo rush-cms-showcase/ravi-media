@@ -1,0 +1,78 @@
+---
+import Layout from "@/layouts/layout.astro"
+import Navbar from "@/components/common/navbar.astro"
+import { Image } from "astro:assets"
+import rafhaelImg from "@/assets/rafhael.webp"
+import viniciusImg from "@/assets/vinicius.webp"
+import ProfileCard from "@/components/about/profile-card.astro"
+import Footer from "@/components/common/footer.astro"
+
+const founders = [
+    {
+        name: "Rafhael Marsigli",
+        image: rafhaelImg,
+        color: "blue" as const,
+        roles: [
+            { text: "Software Architect", colorClass: "bg-blue-500/10 text-blue-400 border-blue-500/20" },
+            { text: "Full Stack Developer", colorClass: "bg-purple-500/10 text-purple-400 border-purple-500/20" }
+        ],
+        bio: [
+            "Atuei em todas as frentes: do ajuste fino de interfaces pixel-perfect à configuração de infraestrutura bruta em servidores self-hosted. Essa experiência \"Full Cycle\" removeu o glamour e o substituiu por pragmatismo.",
+            "Hoje, quando desenho uma arquitetura, não penso apenas na teoria de livros - penso em como ela se comportará em produção, como será debugada e quanto custará escalar. Não vendo balas de prata; construo sistemas que param em pé."
+        ],
+        socials: [
+            { href: "https://linkedin.com/in/rafhael", icon: "simple-icons:linkedin", colorClass: "hover:text-blue-500" },
+            { href: "https://rafhael.com.br", icon: "lucide:globe", colorClass: "hover:text-white" },
+            { href: "https://www.tabnews.com.br/rmarsigli", icon: "lucide:folder", colorClass: "hover:text-green-500" },
+            { href: "https://dev.to/rmarsigli", icon: "custom:dev", colorClass: "" }
+        ]
+    },
+    {
+        name: "Vinicius Martins",
+        image: viniciusImg,
+        color: "orange" as const,
+        roles: [
+            { text: "Lead Designer" },
+        ],
+        bio: [
+            "Sou designer com foco estratégico, atuando na criação de soluções visuais que ajudam negócios a comunicarem melhor seu valor e se posicionarem com clareza no digital. Meu trabalho vai além da estética: busco entender o contexto, os objetivos e o público de cada projeto para transformar ideias em uma presença visual coerente, funcional e alinhada com resultados reais.",
+            "Acredito que design é uma ferramenta de parceria. Por isso, atuo lado a lado com cada cliente, participando do processo como alguém que se envolve com o negócio, não apenas como um prestador de serviço. O objetivo é construir algo que faça sentido, transmita confiança e contribua para o crescimento de forma consistente."
+        ],
+        socials: [
+            { href: "https://www.behance.net/martinsdsgnr", icon: "simple-icons:behance", colorClass: "hover:text-blue-500" }
+        ]
+    }
+];
+---
+
+<Layout title="Sobre Nós | Ravi Media">
+    <Navbar />
+    
+    <main class="pt-32 pb-20 container mx-auto px-4 min-h-screen">
+        <!-- Header -->
+        <section class="max-w-4xl mx-auto text-center mb-20">
+            <h1 class="text-4xl lg:text-5xl font-bold mb-6">
+                Quem somos
+            </h1>
+            <div class="space-y-4 text-xl text-gray-400 leading-relaxed text-left lg:text-center max-w-3xl mx-auto">
+                <p>
+                    A Ravi Media nasceu para resolver um problema simples — e ignorado por muita gente: negócios bons que não recebem contatos porque a base digital é fraca, lenta ou mal estruturada.
+                </p>
+                <p>
+                    Não somos uma agência criativa tradicional. Somos uma operação técnica focada em infraestrutura digital que gera demanda previsível. Atuamos desde o ajuste fino de performance, SEO técnico e presença local no Google até a construção de landing pages pensadas exclusivamente para conversão em WhatsApp.
+                </p>
+                <p>
+                    Nosso trabalho começa no diagnóstico e termina quando o site carrega rápido, aparece melhor no Google e gera contatos reais. Sem pacotes confusos. Sem promessas irreais. Apenas critério técnico, processo claro e entrega objetiva.
+                </p>
+            </div>
+        </section>
+
+        <!-- Founders Grid -->
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {founders.map(founder => (
+                <ProfileCard {...founder} />
+            ))}
+        </div>
+    </main>
+    <Footer />
+</Layout>
